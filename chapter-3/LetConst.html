@@ -1,0 +1,31 @@
+<html>
+  <script>
+    data = "Hello";
+    var top = 20;
+    console.log("window.top", window.top);
+    console.log("var top=== 20 ", top === 20);
+    function hello() {
+      str = "helloi";
+    }
+    hello();
+
+    let a = 20;
+    const b = 23; // const is constant ,cannot not change value;
+    a++;
+    // b++;
+    console.log("a ", a);
+    console.log("b ", b);
+
+    const obj = {
+      name: "Jhon",
+      age: 30,
+    };
+    /*
+    obj = {
+      name: "Another",
+    };
+    */
+    obj.name = "Another";
+    console.log("obj.name ", obj.name);
+  </script>
+</html>

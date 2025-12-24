@@ -1,0 +1,34 @@
+<html>
+  <script>
+    let str = "hello 'hi' ";
+    let name = "apple";
+    let price = 20;
+    let isFreshed = true;
+
+    console.log(str);
+    console.log("type of str :", str);
+
+    str = 'hello "hi"';
+    console.log(str);
+
+    str = "hello \"hi\"'hi'";
+    console.log(str);
+
+    str =
+      "I would like to by an " +
+      name +
+      " and its price is " +
+      price +
+      ". Is it fresh? Yes,it is " +
+      isFreshed;
+    console.log(str);
+
+    str = `I would like to by an ${name} and its price is ${price}. Is it fresh? Yes,it is ${isFreshed}.`;
+    console.log(str);
+
+    str = `Frist name
+Middle name 
+Last name`;
+    console.log(str);
+  </script>
+</html>

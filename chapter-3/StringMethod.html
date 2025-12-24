@@ -1,0 +1,28 @@
+<html>
+  <script>
+    let str = "Hello World";
+    console.log("Str to substring(2,8) :", str.substring(2, 8));
+    console.log(
+      "Str to substring(2,str.length) :",
+      str.substring(2, str.length)
+    );
+    console.log("Str to substring(2) :", str.substring(2));
+    // substring and slice difference
+    console.log("str to substring(-2) :", str.substring(-2)); // cannot access (-) sign
+    console.log("str to slice(-2) :", str.slice(-3));
+    console.log("str to slice(-8,-3) :", str.slice(-8, -3));
+
+    let arr = str.split(" ");
+    console.log("str to split ,", arr);
+
+    console.log("str to indexof('W') ,", str.indexOf("W"));
+    console.log("str to indexof('k') ,", str.indexOf("k"));
+    console.log("str to lastindexof ,", str.lastIndexOf("l"));
+    console.log("str to startsWith ,", str.startsWith("Hell"));
+    console.log("str to endsWith ,", str.endsWith("World"));
+    console.log("str to includes ,", str.includes("or"));
+    console.log("str to replace('Wo','Y')", str.replace("Wo", "Y")); // cannot change the orginal str
+    console.log(str);
+    console.log("str.charAt(0) ", str.charAt(0));
+  </script>
+</html>

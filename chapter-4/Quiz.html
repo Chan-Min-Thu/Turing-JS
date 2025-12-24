@@ -1,0 +1,15 @@
+<html>
+  <script>
+    let obj = {
+      valueOf() {
+        return 3;
+      },
+    };
+
+    ++obj;
+    // ++2  ❌ input must be left value.
+
+    console.log("obj ", obj);
+    console.log("type of obj", typeof obj);
+  </script>
+</html>

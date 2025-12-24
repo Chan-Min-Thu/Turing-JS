@@ -1,0 +1,30 @@
+<html>
+  <script>
+    let obj = {
+      name: "CMT",
+      age: 27,
+      /*
+      address: {
+        city: "Bangkok",
+      },
+      */
+    };
+    console.log("obj property access  :", obj.name);
+    console.log("obj property access  :", obj["name"]);
+    console.log("city ", obj?.address?.city);
+
+    let arr = [10, 20, 30];
+    console.log("arr property access ", arr[0]);
+
+    let fun = function () {
+      console.log("Hello");
+    };
+    fun();
+    fun = undefined;
+    fun?.();
+
+    // obj declare
+    let date = new Date();
+    console.log("today", date.toDateString());
+  </script>
+</html>

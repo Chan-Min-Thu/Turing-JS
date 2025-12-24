@@ -1,0 +1,27 @@
+<html>
+  <script>
+    /*
+     function scope  | block scope
+          hoisting   | no
+          redeclare  | no
+    access any where | within block
+    */
+    function hello() {
+      // function scope
+      console.log("Before declare data :", data); //hoisting
+      var data = 40;
+
+      console.log("After declare data :", data);
+      {
+        //block
+        // console.log("no hoisting block scope .", num);
+        let num = 10;
+        var data2 = 30;
+        console.log("let is block scope.", num);
+      }
+      //   console.log("let can not call outside of block", num);
+      console.log("var can call outside of block", data2);
+    }
+    hello();
+  </script>
+</html>

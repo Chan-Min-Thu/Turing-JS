@@ -1,0 +1,43 @@
+<html>
+  <script>
+    let a = 7; // unary operator
+    let b = 3;
+
+    console.log("a + b :", a + b); // binary operator (+ = operator , a,b = operand)
+    console.log("a - b :", a - b);
+    console.log("a * b :", a * b);
+    console.log("a / b :", a / b);
+    console.log("a % b :", a % b);
+    console.log("a ** b :", a ** b); //Exponentiation
+
+    console.log("Math.round :", Math.round(4.6)); // to study at Mdn Math
+    console.log("Math.floor :", Math.floor(3.6));
+    console.log("Math.ceil :", Math.ceil(4.2));
+    console.log("Math.min :", Math.min(2, 5, 6));
+    console.log("Math.max :", Math.max(2, 234, 199));
+    console.log("Math random :", Math.random());
+
+    let maxValue = Number.MAX_VALUE + 300;
+    console.log("max Value :", maxValue); // 1.7976931348623157e+308
+
+    let minValue = Number.MIN_VALUE;
+    console.log("min Value :", minValue); // 5e-324
+
+    let result = 4 / 0;
+    console.log("divison By zero :", result); // infinity
+
+    let posZero = 0;
+    let negZero = -0;
+    console.log(
+      "Positive and negative zeros are the same :",
+      posZero === negZero
+    );
+
+    // difference
+
+    let divisonByPosZero = 1 / posZero;
+    let divisonByNegZero = 1 / negZero;
+    console.log("Divison By Positive Zero :", divisonByPosZero); // infinity
+    console.log("Divison By Negative Zero :", divisonByNegZero); // -infinity
+  </script>
+</html>

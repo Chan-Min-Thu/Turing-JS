@@ -1,0 +1,60 @@
+<html>
+  <script>
+    let obj = {
+      name: "CMT",
+      // first priority
+      valueOf() {
+        console.log("value of called.");
+        return 100;
+      },
+
+      // second priority
+      toString() {
+        console.log("to string called.");
+        return "hello";
+      },
+    };
+    console.log("obj.toString()", obj.toString());
+    console.log("obj+''", obj + "");
+    console.log("!!obj", !!obj);
+
+    let obj2 = {};
+    /*
+    obj2 -> string [object object]-> number NaN
+    */
+    console.log("+obj2", +obj2);
+    console.log("!!obj2", !!obj2);
+
+    let obj3 = {
+      name: "CMT",
+      // first priority
+      valueOf() {
+        console.log("value of called.");
+        return {};
+      },
+
+      // second priority
+      toString() {
+        console.log("to string called.");
+        return "hello";
+      },
+    };
+    console.log("obj3", "" + obj3);
+
+    let obj4 = {
+      name: "CMT",
+      // first priority
+      valueOf() {
+        console.log("value of called.");
+        return {};
+      },
+
+      // second priority
+      toString() {
+        console.log("to string called.");
+        return {};
+      },
+    };
+    console.log("obj4", "" + obj4);
+  </script>
+</html>

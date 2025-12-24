@@ -1,0 +1,38 @@
+<html>
+  <script>
+    let str = "123aaa";
+    let num = Number.parseInt(str);
+    console.log("Value of num :", num);
+
+    let strFloat = "123.22";
+    let float = Number.parseFloat(strFloat);
+    console.log("Value of float :", float);
+
+    let string = "111";
+    let number = +string;
+
+    console.log("Value of number :", number);
+
+    let a = "3";
+    let b = "2";
+    let c = "Hello";
+
+    let result = a * c;
+
+    console.log("Value of a * b :", a * b); // 6
+    console.log("Value of a * c :", a * c); // NaN
+    console.log("type of NaN :", typeof NaN);
+
+    console.log("result === result :", result === result);
+    console.log("result === NaN :", result === NaN);
+    console.log("isNaN(result) :", isNaN(result));
+    // parseInt can change all string literal including letter, but + cannot.
+
+    let d = 0.3;
+    let e = 0.2;
+
+    console.log("value of d :", d);
+    console.log("value of e :", e);
+    console.log("value of d-e :", d - e);
+  </script>
+</html>

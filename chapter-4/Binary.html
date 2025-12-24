@@ -1,0 +1,36 @@
+<html>
+  <script>
+    let a = 2;
+    let b = 3;
+
+    /*
+    AND
+    0 0 = 0
+    0 1 = 0
+    1 0 = 0
+    1 1 = 1
+    */
+    console.log("a to binary", a.toString(2)); //10
+    console.log("b to binary", b.toString(2)); //11
+    console.log("(a & b) to binary", (a & b).toString(2)); //10
+
+    /*
+    OR
+    0 0 = 0
+    0 1 = 1
+    1 0 = 1
+    1 1 = 1
+    */
+    console.log("(a | b) to binary", (a | b).toString(2)); //11
+
+    /*
+    XOR
+    0 0 = 0
+    0 1 = 1
+    1 0 = 1
+    1 1 = 0
+    */
+    console.log("(a ^ b) to binary", (a ^ b).toString(2)); //1
+    console.log("~a", ~a);
+  </script>
+</html>

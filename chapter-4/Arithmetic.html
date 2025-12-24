@@ -1,0 +1,43 @@
+<html>
+  <script>
+    let data = 2 + "2"; // string concatenation if one of operands is string
+    console.log("data", data); //22
+    console.log("type of data", typeof data);
+    /*
+     if operand is object 
+
+    obj to primitive conversion && if result is string;
+       string concatenation
+    else number +-
+    */
+
+    let obj = {
+      valueOf() {
+        return "5";
+      },
+    };
+    let result = obj + 2; // 52
+    console.log("result", result);
+    obj = {
+      valueOf() {
+        return false;
+      },
+    };
+    result = obj + 2;
+    console.log("result", result); //2
+
+    let a = -10;
+    let b = +a;
+    console.log("a", a);
+    console.log("b", b);
+
+    let c = 11;
+    let d = c++; //post increment
+    console.log("c", c); // 12
+    console.log("d", d); //11
+
+    let e = ++c; // pre increment
+    console.log("c", c); //13
+    console.log("e", e); //13
+  </script>
+</html>
