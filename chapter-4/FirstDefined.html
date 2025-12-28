@@ -1,0 +1,10 @@
+<html>
+  <script>
+    function plugin(width) {
+      //   let w = width || 10;
+      let w = width ?? 100; // ?? first-defined operator
+      console.log("width", w);
+    }
+    plugin(0); //0
+  </script>
+</html>

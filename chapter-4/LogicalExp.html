@@ -1,0 +1,39 @@
+<html>
+  <script>
+    /*
+        AND
+        0 0 => 0;
+        0 1 => 0;
+        1 0 => 0;
+        1 1 => 1;
+        if LHS  is falsy , retrun LHS; 
+        else return RHS
+        */
+
+    /*
+        OR
+        0 0 => 0;
+        0 1 => 1;
+        1 0 => 1;
+        1 1 => 1;
+
+        if LHS is fasly , return RHS
+        else LHS is true, return LHS
+        */
+
+    console.log("false && false ", false && false);
+    console.log("true && true ", true && true);
+
+    let obj = {};
+
+    console.log("obj && 'hello'", obj && "hello"); // hello
+    console.log("'hello' && obj", "hello" && obj); // hello
+    console.log("'' && 'hello'", "" && "hello"); // empty string
+    console.log("0 && 'hello'", 0 && "hello"); // 0
+    console.log("null && 'hello'", "hello" && null); // null
+    console.log("'hello' && 'yes'", "hello" && "yes"); // hello
+
+    console.log("obj || 'hello'", obj || "hello"); // {}
+    console.log("'' || 'hello'", "" || "hello"); // hello
+  </script>
+</html>

@@ -1,0 +1,21 @@
+<html>
+  <script>
+    let myan = +window.prompt("Enter your Myanmar score.");
+    let eng = +window.prompt("Enter your English score.");
+    let math = +window.prompt("Enter your Math score.");
+
+    if (myan >= 40) {
+      if (eng >= 40) {
+        if (math >= 40) {
+          console.log("You passed the exam.");
+        } else {
+          console.log("You failed Math.");
+        }
+      } else {
+        console.log("You failed english.");
+      }
+    } else {
+      console.log("You failed myanmar.");
+    }
+  </script>
+</html>
