@@ -1,0 +1,25 @@
+<html>
+  <script>
+    /*
+    for (let i = 0; i < 4; i++) {
+      console.log("Outer fun----,", i);
+      for (let j = 0; j < 3; j++) {
+        console.log("   Inner loop *** ", j);
+      }
+    }
+    console.log("Loop finished.");
+    */
+    let matrix = [
+      [1, 2, 3],
+      [4, 5, 6, 100, 200],
+      [7, 8, 9],
+    ];
+
+    for (let i = 0; i < matrix.length; i++) {
+      let arr = matrix[i];
+      for (let j = 0; j < arr.length; j++) {
+        console.log("   child matrix *** ", arr[j]);
+      }
+    }
+  </script>
+</html>

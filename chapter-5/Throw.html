@@ -1,0 +1,25 @@
+<html>
+  <script>
+    function div(a, b) {
+      if (isNaN(a) || isNaN(b)) {
+        throw new Error("A or B is not a number.");
+      }
+      return a / b;
+    }
+    function another() {
+      try {
+        let result = div(100, a);
+
+        console.log("Result:", result);
+      } catch (e) {
+        console.log("Error =>", e);
+        return 1000;
+      } finally {
+        console.log("Execution completed finally.");
+        return 50;
+      }
+    }
+    let result = another();
+    console.log("Final Result:", result);
+  </script>
+</html>

@@ -1,0 +1,20 @@
+<html>
+  <script>
+    let num = 5;
+    let str = "";
+
+    for (let i = 5; i >= 0; i--) {
+      for (let j = 0; j <= num; j++) {
+        if (j == 0 || j == i || i == num) {
+          str += "* ";
+        } else {
+          str += "  ";
+        }
+      }
+      str += "\n";
+    }
+    console.log(str);
+
+    console.log("Loop finished.");
+  </script>
+</html>
