@@ -1,0 +1,28 @@
+<html>
+  <script>
+    let obj = {
+      name: "Jhon Wick",
+      age: 45,
+      "another name": "Jhon",
+    };
+
+    console.log("name :", obj.name);
+    let propName = "age";
+    console.log("age :", obj[propName]);
+    console.log("another name :", obj["another name"]);
+
+    let obj2 = {
+      x: 10,
+      y: 20,
+      z: 30,
+    };
+    for (const key in obj2) {
+      console.log(`${key} : ${obj2[key]}`);
+    }
+    obj2.another = "hello";
+    console.log("obj2", obj2);
+
+    obj2.address.city = "New York";
+    console.log("obj2 after adding address :", obj2.address.city); // error
+  </script>
+</html>

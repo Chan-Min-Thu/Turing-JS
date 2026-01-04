@@ -1,0 +1,29 @@
+<html>
+  <script>
+    let obj = {
+      name: "Jhon Wick",
+      age: 45,
+
+      address: {
+        city: "New York",
+      },
+    };
+
+    console.log("obj of city", obj?.address?.city);
+    delete obj.address;
+    console.log("obj", obj);
+    console.log("toString in obj", "toString" in obj);
+    console.log("address in obj", "address" in obj);
+    console.log("name in obj", "name" in obj);
+
+    console.log("has own property name :", obj.hasOwnProperty("name"));
+    console.log("has own property address :", obj.hasOwnProperty("address"));
+
+    console.log("'name' in obj", "name" in obj);
+    console.log("obj.x != undefined", obj.x != undefined);
+
+    let arr = [10, 20, 30];
+    delete arr[1]; // should not be used in array
+    console.log("arr", arr);
+  </script>
+</html>

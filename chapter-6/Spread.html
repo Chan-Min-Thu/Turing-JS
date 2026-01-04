@@ -1,0 +1,14 @@
+<html>
+  <script>
+    let first = { a: 1, items: [100] };
+    let second = { b: 2, items: [200] };
+    let third = { c: 3, items: [300] };
+
+    let obj = { ...first, ...second, ...third }; //spread operator
+    obj.items.push(300);
+    console.log("obj.items", obj);
+    console.log("first.items", first.items);
+    console.log("second.items", second.items);
+    console.log("third.items", third.items);
+  </script>
+</html>

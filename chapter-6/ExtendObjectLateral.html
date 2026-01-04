@@ -1,0 +1,19 @@
+<html>
+  <script>
+    let name = "John Doe";
+    let age = 30;
+    const extension = Symbol("my Extension Symbol");
+    let extendedObj = {
+      name,
+      age,
+      address_0: "Somewhere",
+      address_1: "Anywhere",
+      [extension]: "Hello",
+    };
+
+    console.log("extendedObj :", extendedObj);
+    let address = "address_";
+    console.log("extendedObj address_0 :", extendedObj[address + "0"]);
+    console.log("extendedObj address_1:", extendedObj[address + "1"]);
+  </script>
+</html>

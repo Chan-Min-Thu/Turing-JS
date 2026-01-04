@@ -1,0 +1,23 @@
+<html>
+  <script>
+    let parent = {
+      x: 10,
+      y: 20,
+      items: [20],
+    };
+
+    let obj1 = Object.create(parent);
+    let obj2 = Object.create(parent);
+
+    obj1.items.push(30); // read from parent, then push
+    obj2.items.push(40); // obj1.item and obj2.item are same reference
+
+    console.log("parent items:", parent.items);
+    console.log("obj1 items:", obj1.items);
+    console.log("obj2 items:", obj2.items);
+
+    obj2.items = [100];
+    console.log("obj1 items:", obj1.items);
+    console.log("obj2 items:", obj2.items);
+  </script>
+</html>

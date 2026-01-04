@@ -1,0 +1,21 @@
+<html>
+  <script>
+    let obj = {
+      name: "Jhon Wick",
+      age: 45,
+      address: "YGN",
+      items: [1, 2, 3],
+    };
+
+    let clone = { ...obj }; // using spread operator to clone object
+    let str = JSON.stringify(obj); //serialization
+    console.log("stringify obj :", str);
+
+    let parsedObj = JSON.parse(str); // deserialization
+    console.log("parsed obj :", parsedObj);
+
+    obj.items.push(4);
+    console.log("after pushing 4 to obj.items :", obj);
+    console.log("parsedObj items after pushing 4 to obj.items :", parsedObj);
+  </script>
+</html>

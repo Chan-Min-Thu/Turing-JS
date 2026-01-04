@@ -1,0 +1,15 @@
+<html>
+  <script>
+    for (let p in window) {
+      //   console.log("window property :", window[p]);
+    }
+    let obj = {
+      name: "Jhon Wich",
+      age: 27,
+      address: "YGN",
+    };
+    console.log("obj property:", Object.keys(obj));
+    console.log("obj getOwnPropertyNames :", Object.getOwnPropertyNames(obj));
+    console.log("obj property:", Reflect.ownKeys(obj));
+  </script>
+</html>

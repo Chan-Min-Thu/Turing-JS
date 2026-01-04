@@ -1,0 +1,24 @@
+<html>
+  <script>
+    let target = { x: 1 };
+    source = { y: 2, z: 4 };
+
+    for (let p in source) {
+      target[p] = source[p];
+    }
+    console.log("target after adding ", target);
+    console.log("source  :", source);
+
+    let first = {};
+    let second = { a: 100, b: 20 };
+    let third = { b: 30, c: 40 };
+
+    //  let obj = Object.assign(first, second, third); // right to left copies
+
+    let obj = { ...second, ...third }; //spread operator
+
+    console.log("obj after assign :", obj);
+    console.log("first after assign :", first);
+    console.log("second after assign :", second);
+  </script>
+</html>
