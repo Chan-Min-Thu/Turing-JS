@@ -1,0 +1,23 @@
+<html>
+  <script>
+    let obj = {
+      name: "Cmt",
+      _age: 25, // hidden fields
+      set age(newValue) {
+        if (newValue > 0 && newValue < 100) {
+          this._age = newValue;
+        } else {
+          console.log("Invalid age!");
+        }
+      },
+      get age() {
+        console.log("getting age");
+        return this._age;
+      },
+    };
+    obj.age = 130;
+    obj.age = 26;
+    console.log("obj", obj);
+    console.log("obj.age", obj.age);
+  </script>
+</html>

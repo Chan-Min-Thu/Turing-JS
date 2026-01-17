@@ -1,0 +1,23 @@
+<html>
+  <script>
+    let item = {
+      name: "apple",
+      qty: 10,
+      price: 30,
+      get total() {
+        return this.qty * this.price;
+      },
+    };
+    console.log("item total", item.total);
+    console.log("item", item);
+
+    let circle = {
+      radius: 20,
+      get area() {
+        return Math.PI * this.radius * this.radius;
+      },
+    };
+
+    console.log("area", circle.area);
+  </script>
+</html>
