@@ -1,0 +1,12 @@
+<html>
+  <script>
+    let arr = [1, 2, 3];
+    arr.forEach((item) => console.log(item));
+
+    arr.forEach((item) => (item *= 2)); // won't chang original arr
+    console.log("Array after for each", arr);
+
+    arr.forEach((item, index, array) => (array[index] = item * 2));
+    console.log("Array after for each in modification to original array", arr);
+  </script>
+</html>

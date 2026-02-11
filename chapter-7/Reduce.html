@@ -1,0 +1,22 @@
+<html>
+  <script>
+    let arr = [2, 4, 6, 8];
+
+    let sum = arr.reduce((a, b) => {
+      console.log("a", a, "b", b);
+      return a + b;
+    });
+    console.log("sum ,", sum);
+
+    let reduceRight = arr.reduceRight((a, b) => {
+      console.log("a", a, "b", b);
+      return a + b;
+    });
+    console.log("sum ,", reduceRight);
+
+    let getMinium = arr.reduce((a, b) => {
+      return a < b ? a : b;
+    });
+    console.log("get Minium ", getMinium);
+  </script>
+</html>

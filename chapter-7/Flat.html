@@ -1,0 +1,13 @@
+<html>
+  <script>
+    let arr = [1, 2, 3];
+    let twoDArr = arr.map((x) => [x, x * 2]).flat();
+    let twoDArrFlatMap = arr.flatMap((x) => [x, x * 2]).flat();
+    console.log("twoDArr", twoDArr);
+    console.log("twoDArrFlatMap", twoDArrFlatMap);
+
+    let arr2 = [5, 6, 7];
+    let concat = arr.concat(arr2);
+    console.log("concact ", concat);
+  </script>
+</html>
