@@ -1,0 +1,45 @@
+# ** Array ** #
+
+Why array ?
+ name လို variables တွေကို ပုံစံတူနေရင် varialbe ခဏ"‌ကြေညာနေရရင် ARRAY ကို သုံးလိုက်ပါ   
+
+ We can call, ordered collections.
+
+ ** To create Array **
+ let array = new Array(); // array constructor
+ let array = []
+ let array2=[...array]
+
+ # ** Two Dimensional Array **
+ let twoDArray = [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+ ]
+
+ ** Iterable objects are what the for/of loop iterates over **
+
+ Array.of(1,3,4,2,5);
+ Array.from(array1)
+
+ let array = [10,20,30]
+ array.length = 10;
+
+ 9 in array // false
+ 2 in array // true
+
+ empyt ဆိုရင်  false;
+ တန်ဖိုး empty မဟူတ်ရင် null, undefined ဆိုရင်လဲ true;
+array['5'] = 200; it also assign value;
+
+index of array must be positive number.
+
+array.shift(); // ရှေ့ဖြုတ်
+array.pop(); //နောက်ဖြုတ်
+array.unshift(1,2);// ရှေ့ထည့်
+array.push(1) // နောက်ထည့်
+array.splice(1,1) //splice(initial ndex, no of elements)
+array.entries(),// [index, value]
+array.forEach(item,index, array)=>{
+    item;
+}// method for each and for of are userage different.

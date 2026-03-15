@@ -19,7 +19,7 @@
     console.log(indexestoDelete);
     for (const index of indexestoDelete.reverse()) {
       arr2.splice(index, 1);
-    }
+    } // reverse() is used to delete from the end of the array to avoid index shifting issues
 
     console.log(arr2);
   </script>

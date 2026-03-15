@@ -1,7 +1,7 @@
 <html>
   <script>
     let str = "2+3;console.log('hello world')";
-    //eval should use in real world prj because of js fun can run even inside the string RCE
+    //eval shouldn't be used in real world projects because of js functions can run even inside the string RCE
     console.log(eval(str));
   </script>
 </html>

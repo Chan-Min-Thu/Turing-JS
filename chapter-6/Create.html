@@ -10,13 +10,20 @@
     let obj2 = Object.create(parent);
 
     obj1.items.push(30); // read from parent, then push
-    obj2.items.push(40); // obj1.item and obj2.item are same reference
+    obj2.items.push(40); // obj1.item and obj2.item are same reference from the parent
+    /*
+    obj1 နဲ့  obj2  ရဲ့ items ကို parent ကနေ reference လုပ်ထားတာကြောင့် obj1.items.push(30) နဲ့ obj2.items.push(40)
+     လုပ်တဲ့အခါမှာ parent.items ကို ပဲ   update လုပ်တာဖြစ်ပါတယ်။ ဒါကြောင့် obj1.items နဲ့ obj2.items မှာ 20, 30, 40 ဆိုတဲ့ values တွေရှိနေပါပြီ။
+     = နဲ့ assign လုပ်တဲ့အခါမှာတော့ obj2.items = [100] လုပ်တဲ့အခါမှာ obj2.items ကို parent.items ကနေ reference လုပ်တာကို မလုပ်တော့ဘဲ 
+     obj2 ရဲ့ ကိုယ်ပိုင် items property ကို ဖန်တီးပြီး [100] ဆိုတဲ့ array ကို assign လုပ်တာဖြစ်ပါတယ်။
+      ဒါကြောင့် obj1.items မှာ 20, 30, 40 ဆိုတဲ့ values တွေရှိနေသေးပြီး obj2.items မှာတော့ [100] ဆိုတဲ့ array တစ်ခုရှိနေပါပြီ။
+    */
 
     console.log("parent items:", parent.items);
-    console.log("obj1 items:", obj1.items);
-    console.log("obj2 items:", obj2.items);
+    console.log("obj1 items:", obj1.items); //[20, 30, 40]
+    console.log("obj2 items:", obj2.items); //[20, 30, 40]
 
-    obj2.items = [100];
+    obj2.items = [100]; // writing to obj2.items creates a new property on obj2, shadowing the parent's items
     console.log("obj1 items:", obj1.items);
     console.log("obj2 items:", obj2.items);
   </script>
