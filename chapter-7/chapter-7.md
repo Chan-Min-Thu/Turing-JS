@@ -43,3 +43,25 @@ array.entries(),// [index, value]
 array.forEach(item,index, array)=>{
     item;
 }// method for each and for of are userage different.
+array.every(); // အားလုံးနဲ့ အဆင်ပြေမှ
+array.some(); // တချို့နဲ့ ပြေလည်မှ
+array.reduce((a,b))
+reduceRight // exponential
+flat()// twoDArray to oneDArray
+flatMap()// Map to flat
+slice(1) // index 1 ကနေ အကုန်ယူ
+slice(2,5)// index 1 ကနေ 5 မတိုင်ခင် အကုန်ယူ 
+splice(1,3,100,200) // index 1 ကနေ စပြီး ၃ လုံးဖြတ်မယ် ၁၀၀,၂၀၀ က အစားထိုးမယ် mutable
+/*
+ map // transform
+ filter // select
+ reduce // group
+ slice(-1,-3) // - value လက်ခံတယ် နောက်ကနေယူတယ်
+*/
+
+copywithn(0,3,5) // 0 က target, 3 က စ , 5 က end
+includes
+indexOf,lastIndexOf // last က နောက် ကနေ စရှာ indexOf("2")= -1
+sort // ascending string အနေနဲ့ စီစဉ်မယ်
+// comparator 0,1,-1
+sort((a,b)=> a-b), // number  အနေနဲ့ စီစဉ်မယ် 
