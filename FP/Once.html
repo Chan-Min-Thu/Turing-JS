@@ -1,0 +1,27 @@
+<html>
+    <script>
+        let done = false;
+        function payment(){
+            if(!done){
+                console.log("Payment is processing...");
+                done = true;
+            }else{
+            console.log("Payment is already done.");
+            }
+        }
+        payment();
+        payment();
+
+        let orderedDone = false;
+        function order(){
+            if(!orderedDone){
+                console.log("Order is processing...");
+                orderedDone = true;
+            }else{
+            console.log("Order is already done.");
+            }
+        }
+        order();
+        order();
+    </script>
+</html>

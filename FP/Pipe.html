@@ -1,0 +1,23 @@
+<html>
+  <script>
+    function appendHi(str) {
+      return str + "Hi";
+    }
+    function upperCase(str) {
+      return str.toUpperCase();
+    }
+    function pipe(...funs) {
+      return function (x) {
+        return funs.reduce((x, fun) => fun(x), x);
+      };
+    }
+
+    let pipeFun = pipe( upperCase,appendHi);
+    console.log("pipeFun", pipeFun("hello"));
+
+    let first = (x) => x + 1;
+    let second = (x) => x * 2;
+    let piping = pipe(first,second,console.log);
+    console.log("piping", piping(5));
+  </script>
+</html>

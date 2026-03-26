@@ -1,0 +1,21 @@
+<html>
+  <script>
+    function hello() {
+      console.log("hello.name", hello.name);
+      console.log("hello.length", hello.length);
+      console.log("hello.prototype", hello.prototype);
+    }
+    hello();
+    console.log(".....");
+    function hello2(a, b) {
+      console.log("arguments.length", arguments.length);
+      if (arguments.length !== 2) {
+        console.log("Invalid number of arguments");
+      }
+      return a + b;
+    }
+    console.log("hello()", hello());
+    console.log("hello2(1)", hello2(1));
+    console.log("hello2(1,2)", hello2(1, 2));
+  </script>
+</html>

@@ -1,0 +1,18 @@
+<html>
+    <script>
+        let obj = {
+            name:"John",
+            greet: function(message){
+                console.log("hello", this.name+"What's up "+message);
+            }
+        }
+        let obj2 ={
+            name:"Sharon"
+        }
+        let greet = obj.greet;
+        greet.call(obj,"hi");
+        greet.apply(obj,["hello"]);
+        let boundGreet = greet.bind(obj2,"I'm Sharon");
+        boundGreet();
+    </script>
+</html>

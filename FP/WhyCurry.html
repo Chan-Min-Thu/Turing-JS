@@ -1,0 +1,29 @@
+<html>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ramda/0.31.3/ramda.min.js"></script>
+  <script>
+    function inc1(x) {
+      return x + 1;
+    }
+    /*
+    function add(x,y){
+        return x + y;
+    }
+    */
+
+    function add(x) {
+      return function (y) {
+        return x + y;
+      };
+    } //currying 
+
+    let toadd=add(10) //partial application 
+    let result = R.pipe(inc1, add(20));
+    console.log(result(1));
+
+    function multiply (a,b){
+        return a * b;
+    }
+    let curriedMulti = R.curry(multiply)
+    console.log("curriedMulti ,",curriedMulti(12)(12))
+  </script>
+</html>

@@ -1,0 +1,23 @@
+<html>
+    <script>
+        function appendHi(str){
+            return str + "Hi";
+        }
+        function upperCase(str){
+            return str.toUpperCase();
+        }
+
+        function newfun(x){
+            return appendHi(upperCase(x));
+        }
+
+        console.log("newfun", newfun("hello"));
+        function compose(funA,funB){
+            return function(x){
+                return funA(funB(x));
+            }
+        }
+        let composefun =compose(appendHi,upperCase);
+        console.log("composefun", composefun("hello"));
+    </script>
+</html>

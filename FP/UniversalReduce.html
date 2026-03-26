@@ -1,0 +1,23 @@
+<html>
+    <script>
+        let nums = [1,2,3,4,5,6];
+        
+        let map = function(array, fn){
+            return array.reduce((result,item)=>{
+                 return [...result,fn(item)]
+            },[])
+        }
+        console.log(map(nums,item=>item*3));
+        
+        let filter = function(array, fn){
+            return array.reduce((result,item)=>{
+                if(fn(item)){
+                    return [...result,item]
+                }else{
+                    return result
+                }
+            },[])
+        }
+        console.log(filter(nums, item=> (item%2) === 0))
+    </script>
+</html>

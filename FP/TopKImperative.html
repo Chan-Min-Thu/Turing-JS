@@ -1,0 +1,23 @@
+<html>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ramda/0.31.3/ramda.min.js"></script>
+  <script>
+    let items = [1, 1, 2, 2, 3, 4, 3, 3, 2, 3, 5, 3, 2];
+    let k = 2;
+    let fequency = {};
+    for (const item of items) {
+      if (fequency[item]) {
+        fequency[item] = fequency[item] + 1;
+      } else {
+        fequency[item] = 1;
+      }
+    }
+    let arr = Object.entries(fequency);
+
+    let arr2 = arr.sort((a, b) => {
+      return b[1] - a[1];
+    });
+    let result = arr2.map((x) => x[0]);
+    result.length = k;
+    console.log("result, ", result);
+  </script>
+</html>

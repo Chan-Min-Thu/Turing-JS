@@ -1,0 +1,31 @@
+<html>
+    <script>
+        function add(x,y){ // x and y are parameters
+            return x + y;
+        }
+        let result = add(5,6) // 5 and 6 are arguments
+        console.log("result", result);
+
+        function inc(x){
+            return x++; 
+        }
+        let a = 10;
+        let incA = inc(a); // a is passed as an argument to the function inc.
+        console.log("a", a); // a is primitive value and is passed by value, so it remains unchanged.
+
+        function incObj(obj){
+            obj.count++;
+        }
+        let obj = { count: 10 };
+        console.log("obj.count", obj.count);
+        incObj(obj);
+        console.log("obj.count", obj.count); // obj.count is a reference to the original object, so it is modified.
+
+        function incObj2(obj){
+            obj = { count: 20 }; // This creates a new object and assigns it to the local parameter
+        }
+        let obj2 = { count: 10 };
+        incObj2(obj2);
+        console.log("obj2", obj2); // obj2.count remains unchanged because the local parameter obj in incObj2 is a different reference.
+    </script>
+</html>

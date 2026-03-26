@@ -1,0 +1,7 @@
+<html>
+    <script>
+        let fun = new Function("a","b","console.log('function constructor called'); return a + b;"); // you should avoid using the Function constructor 
+        let reusult = fun(1,2);
+        console.log("result", reusult);
+    </script>
+</html>

@@ -1,0 +1,50 @@
+<html>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ramda/0.31.3/ramda.min.js"></script>
+  <script>
+    let items = [1, 1, 2, 2, 3, 4, 3, 3, 2, 3, 5, 3, 2];
+    let k = 2;
+
+    function getfrequency(i) {
+      let frequency = {};
+      for (const item of i) {
+        if (frequency[item]) {
+          frequency[item] = frequency[item] + 1;
+        } else {
+          frequency[item] = 1;
+        }
+      }
+      return frequency;
+    }
+
+    function getArray(frequency) {
+      let arr = Object.entries(frequency);
+      return arr;
+    }
+
+    function sortArray(arr) {
+      let arr2 = arr.sort((a, b) => {
+        return b[1] - a[1];
+      });
+      return arr2;
+    }
+
+    function map(arr2) {
+      return arr2.map((x) => x[0]);
+    }
+    /*
+    let frequency =  getfrequency();
+    console.log("frequency ,",frequency);
+    let arr = getArray(frequency);
+    console.log("array ," ,arr);
+    let arr2 = sortArray(arr);
+    console.log("array 2 ,", arr2);
+    let result = map(arr2);
+    console.log("result ,", result)
+    console.log("last result, ",result.slice(0,k));
+    */
+    let result = R.pipe(getfrequency, getArray, sortArray, map, (result) =>
+      result.slice(0, k),
+    );
+    console.log("result", result(items));
+  </script>
+</html>

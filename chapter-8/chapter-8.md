@@ -21,3 +21,12 @@ let fun =()=>{
 /* normal function */ 
 
 ခနခန သုံးရမဲ့ နေရာမှာဆို normal function ကို သုံးပါ.
+
+
+# * Closure function * #
+
+variable တစ်ခုက outer function ထဲမှာ ရှိနေစဉ် inner function က ယူသုံလို့ရတာကို closure လို့ခေါ်ပါတယ်.
+outer function ခေါ်သုံးလဲ ပျောက်မသွားဘူး
+
+function တစ်ခုမှာ inner function ကို name declare မလုပ်ဘဲ return ပြန်ထားရင် အဲ့ outer function ပြန်‌ခေါ်တဲ့အခါ function ပြန်ရတယ် , so we should need to recall this varible as with function call
+

@@ -1,0 +1,13 @@
+<html>
+    <script>
+        function outer () {
+            let a = 1;
+            function inner () {
+                console.log("a:", a);
+
+            }
+            inner();
+        }
+        outer();
+    </script>
+</html>

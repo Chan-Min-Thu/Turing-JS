@@ -1,0 +1,16 @@
+<html>
+    <script>
+        function greet(message="Hi"){
+            console.log("Hello ", message);
+        }
+        greet(); // Outputs: "Hello Hi"
+        greet("John"); // Outputs: "Hello John" 
+        
+        function add(z, x=10,y=10){
+            return z + x + y;
+        }
+        add(5); // Outputs: 25 (5 + 10 + 10)
+        add(5, 20); // Outputs: 35 (5 + 20 + 10)
+        add(5, 20, 30); // Outputs: 55 (5 + 20 + 30)
+    </script>
+</html>

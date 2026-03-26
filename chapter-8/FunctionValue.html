@@ -1,0 +1,24 @@
+<html>
+    <script>
+        function hello(){
+            console.log("Hello World");
+        }
+        // rule-1 
+        let fun = hello; // function value
+        fun(); // invoke the function value
+
+        function greet (fu){
+            console.log("Hello ")
+            fu(); // invoke the function value
+        }
+        // rule-2
+        greet(hello); // pass the function as an argument
+
+        function createGreeter(name){
+            // rule-3
+            console.log("Hello ", name);
+            return hello;
+        }
+        createGreeter("John")(); // invoke the function value returned by createGreeter
+    </script>
+</html>

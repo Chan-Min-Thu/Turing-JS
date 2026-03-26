@@ -1,0 +1,11 @@
+<html>
+    <script>
+        let circle = {
+            radius:5,
+            get area(){
+                return Math.PI * this.radius * this.radius;
+            }// implicit invocation of the getter
+        }
+        console.log("circle area", circle.area); // invoke the getter
+    </script>
+</html>

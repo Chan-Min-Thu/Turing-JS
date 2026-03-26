@@ -1,0 +1,29 @@
+<html>
+  <script>
+    function memonizing(n) {
+      let count = 1;
+      console.log("memonizing called with n:", n);
+      for (let i = 1; i <= n; i++) {
+        count = count * i;
+      }
+      return count;
+    }
+    console.log("memonizing(5):", memonizing(5));
+    // console.log("memonizing(5):",memonizing(5));
+
+    function memonize(fn){
+        let cache = {};
+        return function(x){
+            if(cache[x]){
+                return cache[x];
+            }else{
+                let result = fn(x);
+                cache[x] = result;
+                return result;
+            } 
+        }
+    }
+    const memonizedMemonizing = memonize(memonizing);
+    console.log("memonizedMemonizing(5):", memonizedMemonizing(5));
+  </script>
+</html>

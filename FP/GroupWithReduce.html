@@ -1,0 +1,58 @@
+<html>
+  <script>
+    let students = [
+      { name: "Alice", age: 20, gender: "Female" },
+      { name: "Bob", age: 22, gender: "Male" },
+      { name: "Charlie", age: 21, gender: "Male" },
+      { name: "Diana", age: 20, gender: "Female" },
+      { name: "Helen", age: 22, gender: "Female" },
+      { name: "Charlie", age: 21, gender: "Male" },
+    ];
+    let studentObj = {};
+
+   for(const student of students){
+    if(!studentObj[student.gender]){
+      studentObj[student.gender] = [student]
+    }else{
+      studentObj[student.gender].push(student)
+    }
+   }
+  
+   let groupStudents = students.reduce((group,student)=>
+    {
+      if(!group[student.gender]){
+       return {...group, [student.gender]:[student]}
+      }else{
+        console.log(student.gender)
+       return {...group, 
+        [student.gender]:[...group[student.gender],student]
+      }
+      }},{});
+      // version-1
+    let groupBy = function (array,property){
+      return array.reduce((group,item)=>{
+        if(!group[item[property]]){
+          return {...group,[item[property]]:[item]}
+        }else{
+          return {
+            ...group,[item[property]]:[...group[item[property]],item]
+          }
+        }
+      },{})
+    }
+   console.log(groupBy(students,"gender"))
+   // version-2 
+   let groupBy2 = function(array,property){
+    return array.reduce((group,item)=>{
+      if(!group[item[property]]){
+         group[item[property]] = [item];
+         return group
+      }else{
+        group[item[property]].push(item)
+        return group
+      }
+    },{})
+   }
+   console.log("group2", groupBy2(students,"gender"))
+  </script>
+</html>

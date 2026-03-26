@@ -1,0 +1,25 @@
+<html>
+    <script>
+        function order(){
+            console.log("Your order will be ready soon.")
+        }
+
+        function confirmOrder(){
+            console.log("Your order confirmed.")
+        }
+
+        function logging(fn){
+            return function(...args){
+            console.log("Before the function", fn.name);
+            let result = fn(...args);
+            
+            console.log("After the fuction",fn.name)
+            return result;
+            }
+        }   
+        let orderFnCall = logging(order);
+        let confirmOrderFnCall = logging(confirmOrder);
+        orderFnCall();
+        confirmOrderFnCall();
+    </script>
+</html>

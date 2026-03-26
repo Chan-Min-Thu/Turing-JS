@@ -1,0 +1,35 @@
+<html>
+    <script>
+        function payment(amount){
+            console.log(`Payment of ${amount} is processing...`);
+        }
+
+        function order(){
+            console.log("Order is processing...");
+        }
+
+        function after(){
+            console.log("After function called.");
+        }
+
+        function once(fn,aft){
+            let done = false;
+            return function(...args){
+            if(!done){
+                done = true;
+                return fn(...args);
+            }
+            else{
+              aft && aft();
+            }
+            
+        }
+        }
+        let paymentOnce =once(payment, after);
+        let orderOnce = once(order,after);
+        paymentOnce(100);
+        paymentOnce(100);
+        orderOnce();
+        orderOnce();
+    </script>
+</html>

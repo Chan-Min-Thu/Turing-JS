@@ -1,0 +1,15 @@
+<html>
+  <script>
+    function UniqueId() {
+      let id = 0;
+      return function () {
+        return id++;
+      };
+    }
+    let uniqueId = UniqueId();
+    // uniqueId က  function () { return id++; } ဖြစ်ပြီး၊ ၎င်းသည် 'UniqueId' အပြင် function တွင် သတ်မှတ်ထားသော 'id' variable ကို အသုံးပြုနိုင်သော closure ဖြစ်သည်။
+    // uniqueId is a closure that has access to the variable 'id' defined in the outer function 'UniqueId'.
+    console.log(uniqueId());
+    console.log(uniqueId());
+  </script>
+</html>

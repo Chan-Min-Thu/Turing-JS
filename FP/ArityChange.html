@@ -1,0 +1,31 @@
+<html>
+  <script>
+    console.log("parseInt", parseInt("10", 2));
+    let array = ["123", "45.6", "23.103"];
+
+    let result =
+      array.map(
+        parseInt,
+      );
+       /* map function passes three arguments to the callback function, the current value, the index, 
+        and the array itself. parseInt takes two arguments, the string to parse and the radix (base) to use for parsing. When map calls parseInt,
+        it passes the current value as the first argument and the index as the second argument. This causes parseInt to interpret the index 
+        as the radix, which leads to unexpected results.
+        mapfn (value,inde,array)
+        parseInt(string,radix)
+        parseInt("123",0) // 123
+        parseInt("45.6",1) // NaN (invalid radix) 
+        parseInt("23.103",2) // NaN (invalid radix)
+        */
+    console.log("result", result);
+
+    let unary = function (fn){
+        return function(x){
+            return fn(x);
+        }
+    }
+    let unityPareseInt = unary(parseInt);
+    result = array.map(unityPareseInt);
+    console.log("result with unary", result)
+  </script>
+</html>

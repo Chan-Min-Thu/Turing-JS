@@ -1,0 +1,24 @@
+<html>
+    <script>
+            function greet (){
+                console.log("hello", greet.data);
+            }
+            greet.data = "John";
+            greet(); // Outputs: "Hello John"
+            /*
+             functions in JavaScript are first-class citizens, which means they can have properties and methods just like any other object. 
+             In this example, we assign a property called "data" to the function "greet" and set its value to "John".
+              When we call the function "greet()", it accesses the "data" property and prints "Hello John".
+               This demonstrates that functions can hold data and be used as objects in JavaScript.
+            */
+
+            function trackCount(){
+                trackCount.count++;
+                console.log("Count is ", trackCount.count);
+            }
+            trackCount.count = 0;
+            trackCount(); // Outputs: "Count is 1"  
+            trackCount(); // Outputs: "Count is 2"  
+            trackCount(); // Outputs: "Count is 3"
+    </script>
+</html>

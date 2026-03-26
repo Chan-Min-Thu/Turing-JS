@@ -1,0 +1,23 @@
+<html>
+  <script>
+  function appendHi(str) {
+      return str + "Hi";
+    }
+    function upperCase(str) {
+      return str.toUpperCase();
+    }
+    function compose(...funs) {
+      return function (x) {
+        return funs.reduceRight((x, fun) => fun(x), x);
+      };
+    }
+
+    let multiComposeFun = compose(appendHi, upperCase);
+    console.log("multiComposeFun", multiComposeFun("hello"));
+
+    let first = (x) => x + 1;
+    let second = (x) => x * 2;
+    let multiCompose = compose(console.log, second, first);
+    console.log("multiCompose", multiCompose(5));
+  </script>
+</html>

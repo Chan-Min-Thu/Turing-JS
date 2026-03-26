@@ -1,0 +1,14 @@
+<html>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ramda/0.31.3/ramda.min.js"></script>
+  <script>
+    function appendHi(str){
+        return str + "Hi"
+    }
+    function toUpperCase(str){
+        return str.toUpperCase()
+    }
+
+    let ramdaWithPipe = R.pipe(appendHi,toUpperCase)
+    console.log("randa with pipe ,", ramdaWithPipe("Hello"))
+  </script>
+</html>

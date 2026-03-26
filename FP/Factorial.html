@@ -1,0 +1,23 @@
+<html>
+    <script>
+       
+        let range = function(start,end){
+             let array =[];
+        for(let i=start;i<end;i++){
+       array.push(i);
+        }
+        return array;
+    };
+    console.log("range(5) :",range(1,5))
+
+    for(let item of range(1,7)){
+        console.log("item",item)
+    }
+
+     function fractional(n){
+        return range(1,n+1).reduce((a,b)=> a*b,1)
+    }
+    console.log("fractional(5)",fractional(5))
+    range(1,5).forEach(x=> console.log("item",x))
+    </script>
+</html>

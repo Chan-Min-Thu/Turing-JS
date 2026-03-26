@@ -1,0 +1,14 @@
+<html>
+    <script>
+        function test (...numbers){
+            let total = 0;
+            for(let n of numbers){
+                total += n;
+            }   
+            return total;
+        }
+        console.log(test(1, 2, 3, 4, 5)); // Outputs: 15
+        // argument is array-like object that contains all the arguments passed to the function, 
+        // but it is not a real array and does not have array methods like forEach or map.
+    </script>
+</html>

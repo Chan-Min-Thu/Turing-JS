@@ -1,0 +1,32 @@
+<html>
+    <script>
+        function payment(amount){
+            console.log(`Payment of ${amount} is processing...`);
+        }
+
+        function order(){
+            console.log("Order is processing...");
+        }
+
+        function once(fn){
+            let done = false;
+            return function(...args){
+            if(!done){
+                done = true;
+                return fn(...args);
+            }
+            /*
+            else{
+                console.log("Already done.");
+            }
+                */
+        }
+        }
+        let paymentOnce =once(payment);
+        let orderOnce = once(order);
+        paymentOnce(100);
+        paymentOnce(100);
+        orderOnce();
+        orderOnce();
+    </script>
+</html>

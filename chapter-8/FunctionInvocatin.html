@@ -1,0 +1,34 @@
+<html>
+    <script>
+        function hello(){
+            console.log("Hello World");
+        }
+        hello();
+        let obj ={
+            name:"John",
+            greet:function(message){
+                console.log("this", this);
+                console.log("Hello ",message + this.name);
+            }
+        }
+
+        let obj2 = {
+            name:"Sharon"
+        }
+
+        obj.greet("What's"); // invoke as method
+
+        let greet = obj.greet;
+        greet.call(obj,"hi")
+        greet.call(obj2,"hello") // obj2 get the greet method by using the power of call.
+        greet.apply(obj,["hi"]) // apply is similar to call but it takes the arguments as an array.
+    
+
+        function human(name){
+            this.name = name;
+        }
+
+        let h = new human("hello"); // invoke as constructor
+        console.log("h", h)
+    </script>
+</html>
