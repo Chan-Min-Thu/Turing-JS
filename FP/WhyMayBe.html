@@ -1,0 +1,40 @@
+<html>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ramda/0.31.3/ramda.min.js"></script>
+    <script>
+        const Conatiner = (x)=>({
+            map:(fun)=>Conatiner(fun(x)),
+            valueOf:(x)=>x
+        })
+
+        const Maybe = (x)=>({
+            isEmpty(){
+                return (x === null || x === undefined || x === "")   
+            },
+            map(fun){
+             return this.isEmpty() ? Maybe.of(null):Maybe(fun(x))
+            },
+            valueOf:()=>x
+        })
+
+        Maybe.of = Maybe;
+
+        function toUpper(str){
+            return str.toUpperCase();
+        }
+
+        function appendHi(str){
+            return str + "hi"
+        }
+
+        let newFun = R.pipe(toUpper,appendHi);
+        let result = Maybe.of("hello")
+        .map(newFun)
+        /*
+        let newFun =R.pipe(toUpper,appendHi)
+        let str = "hello";
+          console.log("toUpper", newFun(str))
+        */
+        console.log("toUpper", result.valueOf())
+
+    </script>
+</html>

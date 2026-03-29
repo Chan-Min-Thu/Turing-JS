@@ -1,0 +1,54 @@
+<html>
+    <script>
+          const Maybe = (x)=>({
+            isEmpty(){
+                return (x === null || x === undefined || x === "")   
+            },
+            map(fun){
+             return this.isEmpty() ? Maybe.of(null):Maybe(fun(x))
+            },
+            valueOf:()=>x
+        })
+
+        Maybe.of = Maybe;
+
+        let employess ={
+            1:{
+                name:"Jhon"
+            },
+            2:{
+                name:"Zaw Zaw",
+                supervisor:1
+            },
+            3:{
+                name:"Aung Aung",
+                supervisor:2
+            }
+        }
+
+        function getSupervisor(empId){
+            let emp = employess[empId];
+            if(emp){
+                let isSup = emp.supervisor;
+                if(isSup){
+                    let sup = employess[isSup];
+                    return sup.name
+                }else{
+                    return null;
+                }
+            }
+        }
+
+        function getSupName(empId){
+           return Maybe.of(empId)
+            .map((id)=>employess[id])
+            .map((emp)=>emp.supervisor)
+            .map((supervisorId)=> employess[supervisorId])
+            .map((sup)=> sup.name)
+        }
+
+        console.log("get employe 2 of supervisor", getSupervisor(2))
+        console.log("get employe 1 of supervisor", getSupervisor(1))
+        console.log("get employe 2 of supervisor", getSupName(2).valueOf())
+    </script>
+</html>

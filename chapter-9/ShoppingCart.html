@@ -1,0 +1,32 @@
+<html>
+  <script>
+    class Item {
+        constructor(name,price,qty){
+            this.name = name;
+            this.price = price;
+            this.qty = qty;
+            console.log("Constructor")
+        };
+        toString(){
+           return `${this.name.padEnd(10)}  ${this.price+"".padEnd(10)} ${this.qty+"".padEnd(10)} ${(this.price * this.qty)+"".padEnd(10)}`
+        }
+    }
+    class ShoppingCart {
+      items = [];
+      addItem(item) {
+        this.items.push(item);
+        console.log("addItem,", this.items);
+      }
+      displayItem() {
+        for (const item of this.items) {
+          console.log(item.toString());
+        }
+      }
+    }
+
+    let s1 = new ShoppingCart();
+    s1.addItem(new Item("apple", 20, 3))
+    s1.addItem(new Item("orange", 23, 4))
+    console.log(s1.displayItem())
+  </script>
+</html>

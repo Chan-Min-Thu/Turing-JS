@@ -1,0 +1,27 @@
+<html>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ramda/0.31.3/ramda.min.js"></script>
+
+    <script>
+        // Railway Oriented Programming
+        function div(a,b){
+            if(isNaN(a) || isNaN(b)){
+                throw new Error("A or b is not a number.")
+            }
+            else
+            {
+                return a/b;
+            }
+        }
+
+        let inc =(x)=>x+1;
+        
+        let result;
+    
+        try{
+            result = div(15/3);            
+        }catch(e){
+            result = 15;
+        }
+        console.log("result",inc(result))
+    </script>
+</html>

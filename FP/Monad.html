@@ -1,0 +1,41 @@
+<html>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ramda/0.31.3/ramda.min.js"></script>
+  <script>
+   
+
+    const MayBe =(x)=>({
+        isEmpty(){
+            return x === null || x === undefined
+        },
+        /*
+        map(fn){
+            return this.isEmpty()? MayBe.of(null):MayBe(fn(x))
+        },
+
+        flat(){
+            return x
+        },// အပြင်တလွာကို ဖယ်ချင်ရင်  flat ကို သုံး array မှလို
+        */
+        flatMap(fn){
+            return this.isEmpty()?MayBe.of(null):fn(x)
+        },
+
+        valueOf:()=>x
+    })
+
+    MayBe.of = MayBe;
+    // monadic function
+    function toUpper(x){
+        return MayBe.of(x)
+                    //.map(x=> x.toUpperCase()) // monad function because of return value is Container type
+                    .flatMap(x=>x.toUpperCase())
+    }       
+    console.log("toUpper,", toUpper("hello").valueOf())
+
+    let result = MayBe.of("Javascript")
+                        // .map(toUpper)
+                        // .flat()
+                        .flatMap(toUpper)
+    console.log("result ,", result.valueOf())
+  </script>
+</html>

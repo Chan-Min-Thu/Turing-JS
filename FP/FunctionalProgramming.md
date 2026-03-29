@@ -76,3 +76,17 @@ composition for rules
 
 multiple input အဖြစ်ရှိနေတဲ့ functions တွေကို single input or output ‌ရအောင် ပြောင်းလဲတာကို curry လို့ခေါ်တယ်.
 multiple input function တွေဆိုရင်တောင် currying version(partial application) ပြောင်းပြီး composition လုပ်ရတယ်.
+
+monoid
+    -binary operation
+      associative( associative ဆိုတာ 2 + 3 = 3 + 2 or (2 + 3) + 5 = 2 + ( 3 + 5) အဲ့လို သဘော )
+      + -  * /  မှာ binary operation ဖြစ်ပြီးတော့ associative ဖြစ်တဲ့ကောင် ပါလား ဘယ်ဟာ ကတော့ associative မဖြစ်ဘူးလဲ: answer ( + and *)
+      + အတွက် identity က 0,
+      * အတွက် identity က 1,
+      * binary operation ပါမယ် , associated ဖြစ်မယ် , identity ပါရင် *
+      * { 
+        string concat
+        "hello"+"" 
+        } ကို monoid လို့ခေါ်တယ်.
+
+** Mutation ကိစ္စကို functional programming က ခွင့်မပြုဘူး **

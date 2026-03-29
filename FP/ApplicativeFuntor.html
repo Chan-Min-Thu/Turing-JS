@@ -1,0 +1,21 @@
+<html>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ramda/0.31.3/ramda.min.js"></script>
+  <script>
+    function add(x, y) {
+      return x + y;
+    }
+
+    const Container = (x) => ({
+      map: (fun) => Container(fun(x)),
+      ap: (another) => another.map(x),
+      valueOf: () => x,
+    });
+
+    let curriedAdd = R.curry(add);
+    Container.of = Container;
+    let cont2 = Container.of(20);
+
+    let counter1 = Container.of(10).map(curriedAdd).ap(cont2);
+    console.log("value of cunter1", counter1.valueOf());
+  </script>
+</html>

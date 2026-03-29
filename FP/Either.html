@@ -1,0 +1,48 @@
+<html>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ramda/0.31.3/ramda.min.js"></script>
+
+    <script>
+        /*
+         either = left | right
+         left က error တတ်ရင်
+        right က အလုပ်လုပ်ရင်
+        */
+        
+
+
+        const Left =(x)=>({
+            map(fun){
+                return Left.of(x)
+            },
+            matchWith({left,right}){
+                return left(x)
+            },  
+            valueOf:()=>x
+        })
+        Left.of = Left;
+
+        const Right = (x)=>({
+            map(fun){
+                return Right.of(fun(x))
+            },
+            matchWith({left,right}){
+                return right(x)
+            },
+            valueOf:()=>x
+        })
+        Right.of = Right;
+
+         function div(a,b){
+            if(isNaN(a) || isNaN(b)){
+                return Left.of("A or b is not a number.")
+            }
+            else
+            {
+                return Right.of(a/b);
+            }
+        }
+
+        const inc =(x)=> x+1;
+        div(10,NaN).matchWith({left:()=>Right.of(11),right:(x)=>Right.of(x)}).map(inc).matchWith({left:(x)=>console.log("Error",x),right:(x)=>console.log("Success",x)})
+    </script>
+</html>
