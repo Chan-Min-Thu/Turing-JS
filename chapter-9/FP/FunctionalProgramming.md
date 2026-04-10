@@ -1,14 +1,14 @@
 Once.html 
 payment / orderfun တစ်ကြိမ် တစ်ခါ run စေချင်ရင် closure ကို သုံးပြီး လုပ်ဆောင်နိုင်တယ်.
 
-function တစ်ခုက fn တစ်ခု ကို parameter လက်ခံ့ရင်သော်လည်းကောင်း return ပြန်ရင်သော်လည်းကောင်း ** higher order function ** လို့ခေါ်တယ်.
+function တစ်ခုက fn တစ်ခု ကို parameter လက်ခံရင်သော်လည်းကောင်း return ပြန်ရင်သော်လည်းကောင်း ** higher order function ** လို့ခေါ်တယ်.
  
 pure Function
 
 - function add(a,b){
     return a + b;
 }
-  - a and b က in the process မှာ  without changing a and b  ဆိုရင် add function က pure function
+- a and b က in the process မှာ  without changing a and b  ဆိုရင် add function က pure function
 - side effects မပါတဲ့ function ကို pure function
 - globally variable သုံးရင် no pure function
 - same input and same output မဖြစ်ရင် pure function မဖြစ်ဘူး

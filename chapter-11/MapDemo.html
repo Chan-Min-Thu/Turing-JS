@@ -1,0 +1,20 @@
+<html>
+  <body></body>
+  <script>
+    const map = new Map([
+      ["id-1", "Mg Mg"],
+      ["id-2", "Aung Aung"],
+      ["id-3", "Ko Ko"],
+    ]);
+    console.log("map", map.size); // 3
+    map.set("id-1", "Mg Mg New"); // update value of id-1
+    console.log("map", map.get("id-1")); // Mg Mg New
+    map.get("id-2"); // Aung Aung
+    map.has("id-2"); // true
+    map.delete("id-2"); // delete id-2'
+    map.keys(); // MapIterator {"id-1", "id-3"}
+    map.values(); // MapIterator {"Mg Mg New", "Ko Ko"}
+    map.entries(); // MapIterator {"id-1" => "Mg Mg New", "id-3" => "Ko Ko"}
+    map.clear(); // clear all items in map
+  </script>
+</html>

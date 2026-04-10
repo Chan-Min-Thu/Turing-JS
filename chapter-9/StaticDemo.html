@@ -1,0 +1,19 @@
+<html>
+  <script>
+    console.log("Math.min(),", Math.min(1, -29)); // Math is object, but we didn't call just like this `const Math = new Math();` , so Math.min() is called static method.
+
+    class MyMath {
+      static min(...args) {
+        let min = args[0];
+        for (const arg of args) {
+          if (min > arg) {
+            min = arg;
+          }
+        }
+        return min;
+      }
+    }
+
+    console.log("MyMath.min", MyMath.min(1, 2, 3, -1, -23));
+  </script>
+</html>

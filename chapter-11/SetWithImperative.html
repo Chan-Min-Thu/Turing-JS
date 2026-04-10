@@ -1,0 +1,50 @@
+<html>
+  <body></body>
+  <script>
+    class MySet {
+      unique = [];
+      constructor(items) {
+        for (const item of items) {
+          if (this.unique.indexOf(item) == -1) {
+            this.unique.push(item);
+          }
+        }
+      }
+      get size() {
+        return this.unique.length;
+      }
+      add(item) {
+        if (this.unique.indexOf(item) == -1) {
+          this.unique.push(item);
+        }
+      }
+      toString() {
+        return this.unique.join(", ");
+      }
+      delete(item) {
+        let index = this.unique.indexOf(item);
+        if (index != -1) {
+          this.unique.splice(index, 1);
+        }
+      }
+      has(item) {
+        if (this.unique.indexOf(item) != -1) {
+          return true;
+        }
+        return false;
+      }
+      clear() {
+        this.unique = [];
+    }
+    }
+    let set = new MySet([1, 2, 3, 4, 5, 1, 2, 4, 1, 1, 2, 3, 1, 2, 6]);
+    console.log("set", set); // MySet { unique: [ 1, 2, 3, 4, 5, 6 ] }
+    set.add(7);
+    console.log("set after adding 7", set); // MySet { unique: [ 1, 2, 3, 4, 5, 6, 7 ] }
+    set.add(1);
+    console.log("set after adding 1", set); // MySet { unique: [ 1, 2, 3, 4, 5, 6, 7 ] }
+    console.log("set size", set.size); // 7
+    set.delete(1);
+    console.log("set after deleting 1", set); // MySet { unique: [ 2, 3, 4, 5, 6, 7 ] }
+  </script>
+</html>

@@ -1,0 +1,37 @@
+<html>
+  <script>
+    class Human {
+      // default value
+      name = "";
+      #age = 0;
+      constructor(name, age) {
+        this.name = name;
+        this.#age = age;
+      }
+
+      get age() {
+        return this.#age;
+      }
+
+      set age(newValue) {
+        if (newValue > 0 && newValue <= 120) {
+          this.#age = newValue;
+        }
+      }
+    }
+    const human = new Human("hello", 23);
+    console.log("human", human);
+    human.age = 100;
+    Human.prototype.display = function () {
+      console.log(`Name is ${this.name} and age is ${this.age}`);
+    };
+    human.display();
+
+    console.log("hello".toUpperCase());
+    String.prototype.isEmpty = function(){
+        return this.length === 0;
+    }// monkey patching
+
+    console.log("".isEmpty())
+  </script>
+</html>
