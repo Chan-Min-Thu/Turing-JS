@@ -1,0 +1,36 @@
+<html>
+    <script>
+     let pattern = /^(a|b|c)+$/i; // (a|b|c)+ နဲ့ a, b, သို့မဟုတ် c လုံးမှ မည်သည့်လုံးအကယ်အတိုင်း start ဖြစ်ရမယ်၊ (a|b|c)+ နဲ့ a, b, သို့မဟုတ် c လုံးမှ မည်သည့်လုံးအကယ်အတိုင်း end ဖြစ်ရမယ်
+    console.log(`${pattern} a`, pattern.test("a")); // true     
+    console.log(`${pattern} ab`, pattern.test("ab")); // true
+    console.log(`${pattern} Abc`, pattern.test("Abc")); // true i flag ကိုသုံးထားလို့ capital letter တွေကိုလည်း match လုပ်နိုင်တယ်
+
+    console.log(" ");
+
+    console.log(` search Javascript.search(/script/ui)`, "Javascript".search(/script/ui)); // 4 i flag ကိုသုံးထားလို့ capital letter တွေကိုလည်း match လုပ်နိုင်တယ်
+    console.log(` search Python.search(/script/)`, "Python".search(/script/)); // -1 i flag ကိုသုံးထားမထားတာကြောင့် capital letter တွေကို match လုပ်မရဘူး
+    let email = "chan@domain.com";
+    
+    console.log("domain.com :", email.substring(email.search(/@/ui)+1)); // domain.com i flag ကိုသုံးထားမထားတာကြောင့် capital letter တွေကို match လုပ်မရဘူး
+    let str = "Java and javascript and javascript programming";
+    str = str.replace(/javascript/gi, "JavaScript"); // string ကို "javascript" လုံးရဲ့ length နဲ့တူအောင် replace လုပ်တယ် g flag ကိုသုံးထားလို့ string ထဲမှာ "javascript" လုံးအားလုံးကို replace လုပ်တယ် i flag ကိုသုံးထားလို့ capital letter တွေကိုလည်း match လုပ်နိုင်တယ်
+    console.log(str); // Java and JavaScript and JavaScript programming
+
+    str = "7 plus 3 equals 10";
+    str = str.match(/\d+/g); // string ထဲမှာ digit တွေကို match လုပ်တယ် g flag ကိုသုံးထားလို့ string ထဲမှာ digit တွေအားလုံးကို match လုပ်တယ်
+    console.log(str); // [ '7', '3', '10' ]
+
+
+    pattern = /(\w+):\/\/([\w.]+)\/(\S*)$/; // URL pattern ကိုဖော်ပြထားတာ
+    let text = 'visit my blog at https://www.example.com/~blog';
+    let match = text.match(pattern);
+    console.log(match); // [ 'https://www.example.com/~blog', 'https', 'www.example.com' ]
+    let fullUrl,protocol, host;
+    if(match !== null){
+        fullUrl = match[0]; // https://www.example.com/~blog
+        protocol = match[1]; // https
+        host = match[2]; // www.example.com
+        console.log(`Full URL: ${fullUrl}, Protocol: ${protocol}, Host: ${host}`);
+    }
+   </script>
+</html>

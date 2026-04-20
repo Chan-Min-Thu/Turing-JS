@@ -1,0 +1,43 @@
+<html>
+  <script>
+
+    let pattern = /\w$/; // \w နဲ့ character နဲ့ end ဖြစ်ရမယ်
+    console.log(`${pattern} Bob`, pattern.test("Bob")); // true
+    console.log(`${pattern} Cook`, pattern.test("Cook")); // true
+    console.log(`${pattern} Coc`, pattern.test("Coc")); // true
+    console.log(`${pattern} Chan124`, pattern.test("Chan124")); // true
+    
+    console.log(" ");
+    pattern = /\W$/; // \w နဲ့ character မဟုတ်သော နဲ့ end ဖြစ်ရမယ်
+    console.log(`${pattern} Bob`, pattern.test("Bob")); // false
+    console.log(`${pattern} Cook`, pattern.test("Cook")); // false
+    console.log(`${pattern} Coc`, pattern.test("Coc")); // false
+    console.log(`${pattern} Chan124`, pattern.test("Chan124#")); // true
+
+    console.log(" ");
+    pattern = /^[a-zA-Z](\w)*$/;
+    console.log(`${pattern} bob123`, pattern.test("bob123")); // true
+    console.log(`${pattern} cook24`, pattern.test("cook24")); // true
+    console.log(`${pattern} Coc`, pattern.test("Coc")); // true
+    console.log(`${pattern} Chan124`, pattern.test("Chan124")); // true
+    console.log(`${pattern} Chan#`, pattern.test("Chan#")); // false
+    console.log(`${pattern} 123Chan`, pattern.test("123Chan")); // false
+
+    console.log(" ");
+    pattern =/^A\sB$/; // A နဲ့ start ဖြစ်ရမယ်၊ B နဲ့ end ဖြစ်ရမယ်၊ A နဲ့ B ကြားမှာ space တစ်ခုရှိရမယ်
+    console.log(`${pattern} A B`, pattern.test("A B")); // true       
+    console.log(`${pattern} AB`, pattern.test("AB")); // false
+    console.log(`${pattern} AeB`, pattern.test("AeB")); // false
+    console.log(`${pattern} A  B`, pattern.test("A  B")); // false
+    console.log(`${pattern} A\tB`, pattern.test("A\tB")); // false, \s နဲ့ \t တို့ကိုလည်း match လုပ်နိုင်တယ်
+    console.log(`${pattern} A\nB`, pattern.test("A\nB")); // true, \s နဲ့ \n တို့ကိုလည်း match လုပ်နိုင်တယ်
+
+    console.log(" ");
+    pattern =/^A\SB$/; // A နဲ့ start ဖြစ်ရမယ်၊ B နဲ့ end ဖြစ်ရမယ်၊ A နဲ့ B ကြားမှာ space တစ်ခုမှမရှိရ
+    console.log(`${pattern} A B`, pattern.test("A B")); //  false      
+    console.log(`${pattern} AB`, pattern.test("AB")); // true
+    console.log(`${pattern} AeB`, pattern.test("AeB")); // true
+    console.log(`${pattern} A  B`, pattern.test("A  B")); // false
+    console.log(`${pattern} A\nB`, pattern.test("A\nB")); // false, 
+  </script>
+</html>

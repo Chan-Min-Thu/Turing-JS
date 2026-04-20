@@ -1,0 +1,50 @@
+<html>
+  <script>
+    let patten = /^\d+$/; // \d နဲ့ digit နဲ့ start ဖြစ်ရမယ်၊ \d နဲ့ digit နဲ့ end ဖြစ်ရမယ်
+    console.log(`${patten} 123`, patten.test("123")); // true
+    console.log(`${patten} 123a`, patten.test("123a")); // false
+
+    console.log(" ");
+    pattern = /^\D$/; // \D နဲ့ non-digit နဲ့ start ဖြစ်ရမယ်၊ \D နဲ့ non-digit နဲ့ end ဖြစ်ရမယ်
+    console.log(`${pattern} 123`, pattern.test("123")); // false
+    console.log(`${pattern} 123a`, pattern.test("123a")); // false
+    console.log(`${pattern} abc`, pattern.test("abc")); // true
+    console.log(`${pattern} a`, pattern.test("a")); // true
+
+    console.log(" ");
+    pattern = /^\d{3}$/; // \d နဲ့ digit နဲ့ start ဖြစ်ရမယ်၊ \d နဲ့ digit ၃ လုံးနဲ့ end ဖြစ်ရမယ်
+    console.log(`${pattern} 123`, pattern.test("123")); // true
+    console.log(`${pattern} 123a`, pattern.test("123a")); // false
+    console.log(`${pattern} 1234`, pattern.test("1234")); // false
+    console.log(`${pattern} 1`, pattern.test("1")); // false
+
+    console.log(" ");
+    pattern = /^\d{3,5}$/; // \d နဲ့ digit နဲ့ start ဖြစ်ရမယ်၊ \d နဲ့ digit ၃ လုံးမှ ၅ လုံးအကယ်အတိုင်း end ဖြစ်ရမယ်
+    console.log(`${pattern} 123`, pattern.test("123")); // true
+    console.log(`${pattern} 1234`, pattern.test("1234")); // true
+    console.log(`${pattern} 12345`, pattern.test("12345")); // true
+    console.log(`${pattern} 12`, pattern.test("12")); // false
+    console.log(`${pattern} 123456`, pattern.test("123456")); // false
+
+    console.log(" ");
+    pattern = /^\d?$/; // \d? နဲ့ digit 0 လုံးမှ 1 လုံးအကယ်အတိုင်း start ဖြစ်ရမယ်၊ \d? နဲ့ digit 0 လုံးမှ 1 လုံးအကယ်အတိုင်း end ဖြစ်ရမယ်
+    console.log(`${pattern} `, pattern.test(" ")); // true
+    console.log(`${pattern} 1`, pattern.test("1")); // true
+    console.log(`${pattern} 12345`, pattern.test("12345")); // false
+
+    console.log(" ");
+    pattern = /^\d*$/; // \d* နဲ့ digit နဲ့ start ဖြစ်ရမယ်၊ \d နဲ့ digit 0 လုံးမှ မည်သည့်လုံးအကယ်အတိုင်း end ဖြစ်ရမယ်
+    console.log(`${pattern} 123`, pattern.test("123")); // true
+    console.log(`${pattern} 1234`, pattern.test("1234")); // true
+    console.log(`${pattern} 12345`, pattern.test("12345")); // true
+    console.log(`${pattern} 12`, pattern.test("12")); // true
+    console.log(`${pattern} 123456`, pattern.test("123456")); // true
+
+    console.log(" ");
+    pattern = /^(a|b|c)+$/; // (a|b|c)+ နဲ့ a, b, သို့မဟုတ် c လုံးမှ မည်သည့်လုံးအကယ်အတိုင်း start ဖြစ်ရမယ်၊ (a|b|c)+ နဲ့ a, b, သို့မဟုတ် c လုံးမှ မည်သည့်လုံးအကယ်အတိုင်း end ဖြစ်ရမယ်
+    console.log(`${pattern} a`, pattern.test("a")); // true
+    console.log(`${pattern} ab`, pattern.test("ab")); // true
+    console.log(`${pattern} abc`, pattern.test("abc")); // true
+    console.log(`${pattern} abcd`, pattern.test("abcd")); // false
+  </script>
+</html>

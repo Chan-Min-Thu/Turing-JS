@@ -15,6 +15,9 @@
     map.keys(); // MapIterator {"id-1", "id-3"}
     map.values(); // MapIterator {"Mg Mg New", "Ko Ko"}
     map.entries(); // MapIterator {"id-1" => "Mg Mg New", "id-3" => "Ko Ko"}
+    map.forEach((value,key)=>{
+      console.log(key, value);
+    })
     map.clear(); // clear all items in map
   </script>
 </html>

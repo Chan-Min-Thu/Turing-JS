@@ -1,0 +1,18 @@
+<html>
+  <body>
+    <button type="button" id="allocate">Allocate Memory</button>
+    <button type="button" id="deallocate">Deallocate Memory</button>
+  </body>
+  <script>
+    let arr;
+    document.getElementById("allocate").addEventListener("click", () => {
+      arr = new Array(100_000);
+      console.log("Memory allocated", arr);
+    });
+    document.getElementById("deallocate").addEventListener("click", () => {
+      arr = null; // dereference the array to allow garbage collection
+      console.log("Memory deallocated",arr);
+    });
+     // undefined
+  </script>
+</html>

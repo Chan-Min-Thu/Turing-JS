@@ -1,0 +1,22 @@
+<html>
+  <script>
+    let nums = "123,456,789";
+    nums = nums.split(","); // string ကို "," နဲ့ split လုပ်တယ်
+    console.log(nums); // [ '123', '456', '789' ]
+
+    let pattern = /Java/g; // Java နဲ့ start ဖြစ်ရမယ်
+    let text = "JavaScript > Java";
+    let result;
+    while ((result = pattern.exec(text)) !== null) {
+      console.log(`match : ${result[0]} at index ${result.index}`); // match : Java at index 0
+      console.log("lastindex : ", pattern.lastIndex); // lastindex : 4
+    }
+
+    let pattern2 = /^(\d{2})\/(\d{2})\/(\d{4})$/; // date format ကိုဖော်ပြထားတာ
+    console.log(`${pattern2} 12/31/2024`, pattern2.test("12/31/2024")); // true
+    console.log(`${pattern2} 31/12/2024`, pattern2.test("31/12/2024")); // false
+    console.log(`${pattern2} 12-2-2024`, pattern2.test("12-2-2024")); // false
+    
+    console.log(`"02/12/2024".match(pattern2)`,"02/12/2024".match(pattern2)); // [ '02/12/2024', '02', '12', '2024' ]
+  </script>
+</html>
