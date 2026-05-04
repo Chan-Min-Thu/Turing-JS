@@ -1,0 +1,19 @@
+<html>
+    <script>
+        setTimeout(()=>{
+            console.log("Hello after 0 second");
+        },0);
+        console.log("world"); // stack first, then queue
+
+        function delay(ms){
+            let now = new Date();
+            console.log("time start: ",new Date()- now <ms);
+            while(new Date() - now < ms){
+
+            }
+
+        }
+        delay(2000);
+        console.log("Hello after 2 seconds");
+    </script>
+</html>

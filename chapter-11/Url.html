@@ -1,0 +1,12 @@
+<html>
+    <script>
+        let url = new URL("https://www.example.com:8080/path/to/resource?name=JohnDoe&age=30#section1");
+        console.log("url :", url);
+
+        let encodeUrl = encodeURI("https://www.example.com/path with spaces/resource?name=John Doe&age=30");
+        console.log("encodeUrl :", encodeUrl);
+
+        let decodeUrl = decodeURI(encodeUrl);
+        console.log("decodeUrl :", decodeUrl);
+    </script>
+</html>

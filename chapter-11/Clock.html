@@ -1,0 +1,22 @@
+<html>
+    <body>
+        <div id="time"></div>
+        <button type="button" id="btnStop">Stop Clock</button>
+    </body>
+    <script>
+        let timeDiv = document.getElementById("time");
+        let date = new Date();
+        let time = date.toLocaleTimeString();
+        timeDiv.innerHTML = time;
+
+        let timer = setInterval(()=>{
+            let date = new Date();
+            let time = date.toLocaleTimeString();
+            timeDiv.innerHTML = time;
+        },1000);
+
+        document.getElementById("btnStop").addEventListener("click",()=>{
+            clearInterval(timer);
+        });
+    </script>
+</html>

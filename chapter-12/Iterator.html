@@ -1,0 +1,21 @@
+<html>
+    <script>
+        let arr = [1,2,3,4,5];
+        for(let item of arr ){
+            console.log(item);
+        }
+
+        let m = new Map([["one",1],["two",2],["three",3]]);
+        for(let [key,value] of m){
+            console.log("key -",key,"value-",value);
+        }
+
+        let iterator = arr[Symbol.iterator]();
+        console.log("next",iterator.next()); 
+        console.log("next",iterator.next());
+        /*
+        for(let result = iterator.next(); !result.done; result = iterator.next()){
+            console.log(result.value);
+        }*/
+    </script>
+</html>

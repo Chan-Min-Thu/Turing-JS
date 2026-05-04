@@ -1,0 +1,26 @@
+<html>
+    <script>
+        let students = [
+            {name:"Mg Mg",age:20},
+            {name:"Aye Aye",age:22},
+            {name:"Ko Ko",age:18},
+            {name:"Ma Ma",age:19},
+            {name:"Nyi Nyi",age:19}
+        ];
+        // students.sort((a,b) => a.age - b.age);\
+        students.sort((a,b)=>{
+            if(a.age == b.age){
+                return a.name.localeCompare(b.name);
+            }
+            else{
+                return a.age - b.age;   
+            }
+        })
+        /*
+        a== b, 0,
+        a > b, 1
+        a < b, -1
+        */
+        console.log(students);
+    </script>
+</html>

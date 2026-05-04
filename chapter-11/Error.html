@@ -1,0 +1,17 @@
+<html>
+  <script>
+    function div(a,b){
+        if(b === 0){
+            throw new Error("B is zero , cannot divide by zero");
+        }
+        return a/b;
+    }
+
+    try{
+        div(10,0);
+    }
+    catch(error){
+        console.log("Error :", error.message);
+    }
+  </script>
+</html>
