@@ -1,0 +1,28 @@
+<html>
+    <body>
+
+    </body>
+    <script>
+
+    let url1="https://jsonplaceholder.typicode.com/users/1";
+    let url2="https://jsonplaceholder.typicode.com/users/2";
+
+      /*
+        fetch(url1)
+        .then(response => response.json())
+        .then(user =>{
+            fetch(url2)
+            .then(response => response.json())  
+            .then(user2 => console.log('User1:', user, 'User2:', user2))
+        }) 
+      */
+
+    let urls = [url1, url2];
+    let promises = urls.map(url => fetch(url).then(response => response.json()));
+    console.log("step1")
+    Promise.all(promises)
+        .then(users => console.log('Users:', users))
+        .catch(error => console.error('Error:', error));
+
+    </script>
+</html>

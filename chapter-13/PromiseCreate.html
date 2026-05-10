@@ -1,0 +1,28 @@
+<html>
+    <script>
+        let p = Promise.resolve(42);
+        p.then(value => console.log(value),err=>console.log(err)); // Logs: 42
+
+        let p2 = Promise.reject(new Error("Something went wrong"));
+        p2.then(value => console.log(value),err=>console.log(err)); // Logs: Error: Something went wrong
+
+        let p3 =Promise.reject(new Error("Another error"));
+        p3.then(value => console.log(value),err=>100)
+        .then(value=> console.log(value), err => console.log("Handled in then",err)); // Logs: 100 ,because the error is handled in the first then but if we don't handle the error in the first then it will be handled in the second then and logs the error message
+
+        Promise.resolve(100)
+        .then(value=> value , err => console.log("Handled in then",err))
+        .then(value=> value + 1 , err => console.log("Handled in then",err)) // Logs: 100
+        .then(value=> console.log(value), err => console.log("Handled in then",err)); // Logs: 100
+
+        Promise.reject(new Error("Error in promise chain"))
+        .then(value=> value , err => {
+            throw new Error("Error handled in then");
+        })
+        .then(value=> value + 1 , err => console.log(err))
+        .catch(err=> console.log("Global catch",err))
+        .finally(() => console.log("Finally block executed"));
+         // Logs: Handled in then Error: Error handled in then;
+
+    </script>
+</html>

@@ -1,0 +1,25 @@
+<html>
+    <script>
+        function divfun(a,b){
+            return new Promise((resolve,reject)=>{
+                 setTimeout(()=>{
+                    if(isNaN(a) || isNaN(b)){
+                        reject("A or b is not a number.")
+                    }
+                    else{
+                    resolve(a/b);
+                    }
+                   },1000)
+          
+        })}
+
+        divfun(15,NaN).then(value => console.log("Success:",value),err => console.error("Error:",err)); // Logs: Success: 5
+
+        let result =new Promise((resolve,reject)=>{
+        //   resolve(100)
+        reject(new Error("Something went wrong in division"))
+        //  throw new Error("Something went wrong in division") 
+        })
+        result.then(value => console.log("Success:",value),err => console.error("Error:",err)); // Logs: 100
+    </script>
+</html>

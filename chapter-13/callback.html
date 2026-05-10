@@ -1,0 +1,23 @@
+<html>
+    <body>
+        <button class="btn" type="button">Click me</button>
+    </body>
+    <script>
+        document.getElementsByClassName("btn")[0].addEventListener("click", function(){
+            console.log("Button clicked");
+        });
+        function asyncFun(a,b,callback){
+            setTimeout(() => {
+                console.log("a + b =", a + b);
+                callback(a/b)
+            }, 2000);
+        }
+        console.log("Before asyncFun");
+        asyncFun(10, 20,process);  
+        
+        function process(result){
+            console.log("process result =", result);
+        }
+        console.log("After asyncFun");
+    </script>
+</html>
