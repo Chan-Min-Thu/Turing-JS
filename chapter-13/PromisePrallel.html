@@ -17,6 +17,27 @@
         }) 
       */
 
+      /*
+      let result=[];
+
+      fetch(url1)
+        .then(response => response.json())
+        .then(user =>{
+            result.push(user);
+            if(result.length === 2){
+                console.log('Done Users:', result);
+            }
+        }) 
+        fetch(url2)
+        .then(response => response.json()) 
+        .then(user =>{
+            result.push(user);
+            if(result.length === 2){
+                console.log('Done Users:', result);
+            }
+        })  
+        .catch(error => console.error('Error:', error));
+        */
     let urls = [url1, url2];
     let promises = urls.map(url => fetch(url).then(response => response.json()));
     console.log("step1")
