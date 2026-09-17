@@ -1,0 +1,16 @@
+<html>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ramda/0.31.3/ramda.min.js"></script>
+    <script>
+        function fun(x){
+            return function (y){
+                return x+y;
+            }
+        }
+
+        let add = fun(5);
+        console.log(add(10));
+
+        let curry = R.pipe(fun);
+        console.log(curry(5)(10));
+    </script>
+</html>

@@ -1,0 +1,21 @@
+<html>
+    <script>
+        let SumMonoid = {
+            binaryOperation :(a,b)=> a+b,
+            identity:0
+        }
+        let MultiplyMonoid = {
+            binaryOperation :(a,b)=> a*b,
+            identity:1  
+        }
+
+        function fold(monoid,arr){
+            return arr.reduce(monoid.binaryOperation,monoid.identity);
+        }
+
+        let sum = fold(SumMonoid,[1,2,3,4,5]);
+        console.log(sum);
+        let multiply = fold(MultiplyMonoid,[1,2,3,4,5]);
+        console.log(multiply);
+    </script>
+</html>

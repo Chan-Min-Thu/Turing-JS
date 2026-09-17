@@ -1,0 +1,19 @@
+<html>
+    <script>
+        class Circle{
+            constructor(radius){
+                this.radius = radius;
+            }
+            getArea(){
+                return Math.PI * this.radius * this.radius;
+            }
+        }
+
+        let circle1 = new Circle(5);
+        let circle2 = new Circle(10);
+        console.log(`Area of Circle 1: ${circle1.getArea()}`);
+        console.log(`Area of Circle 2: ${circle2.getArea()}`);
+        console.log("circle1 instanceof Circle: ", circle1 instanceof Circle);
+        
+    </script>
+</html>

@@ -1,0 +1,48 @@
+<html>
+    <script>
+        class Set{
+            unique =[];
+            constructor(items){
+                for(let item of items){
+                    if(this.unique.indexOf(item) == -1){
+                        this.unique.push(item)
+                    }
+                }
+            }
+            add(item){
+              
+                    if(this.unique.indexOf(item) == -1){
+                        this.unique.push(item)
+                    }
+            }
+            delete(item){
+                let index = this.unique.indexOf(item);
+                if(index){
+                    this.unique.splice(index,1)
+                }
+            }
+            has(item){
+                if(this.unique.indexOf(item) !== -1){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+            get size(){
+                return this.unique.length;
+            }
+            toString(){
+                return this.unique.join(",")
+            }
+        }
+
+        let set = new Set([1,2,1,2,1,3,3,11])
+        console.log(set)
+        set.add(10)
+   
+        console.log(set.delete(10))
+        console.log(set.has(11))
+        console.log(set.size)
+        console.log(set.toString())
+    </script>
+</html>

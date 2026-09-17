@@ -1,0 +1,20 @@
+<html>
+    <script>
+        let nums = "123,412,123,112".split(",")
+        console.log("nums",nums)
+
+        let pattern = /Java/g;
+        let text = "Javascirpt and Java";
+        let match;
+        while((match = pattern.exec(text)) !==null){
+            console.log(`matched  ${match[0]} at ${match.index}`)
+            console.log(`match start index at ${pattern.lastIndex}`)
+        }   
+
+        pattern = /^(\d{2})\/(\d{2})\/(\d{4})$/;
+
+        console.log("02/01/2025",pattern.test("02/01/2025"))
+        console.log("02/1/2025",pattern.test("02/1/2025"))
+        console.log("02/01/2025".match(pattern))
+    </script>
+</html>

@@ -1,0 +1,57 @@
+<html>
+    <script>
+        const MayBe = (x)=>({
+            isEmpty(x){
+                return x === null || x === undefined || x === "";
+            },
+            map(fn){
+                return this.isEmpty(x) ? MayBe.of(null) : MayBe.of(fn(x))
+            },
+            valueOf:()=>x
+        })
+        MayBe.of = MayBe;
+        let employees ={
+            1:{
+                name:"Harry"
+            },
+            2:{ 
+                name:"Jhon",
+                supervisor:1
+            },
+            3:{
+                name:"Sam",
+                supervisor:2
+            },
+            4:{
+                name:"Peter",
+                supervisor:3
+            },
+        }
+
+        // imperative way
+        /*
+        function getSupervisorName(empId){
+           let emp = employees[empId];
+           if(emp){
+               let sup = emp.supervisor;
+               if(sup){
+                     let sup = employees[sup];
+                     if(sup){
+                         return sup.name;
+                     }else{
+                         return null;
+                 }
+                 }
+                }
+            }
+            
+        console.log("get 4 employee's supervisor:",getSupervisorName(4));
+         */
+
+         // functional way
+         function getSupervisorName(empId){
+            return MayBe.of(employees[empId]).map(emp=>emp.supervisor).map(supId=>employees[supId]).map(sup=> sup.name).valueOf();
+         }
+         console.log("get 4 employee's supervisor:",getSupervisorName(undefined));
+    </script>
+</html>`

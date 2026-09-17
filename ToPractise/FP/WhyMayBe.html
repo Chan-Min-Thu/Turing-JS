@@ -1,0 +1,29 @@
+<html>
+     <script src="//cdnjs.cloudflare.com/ajax/libs/ramda/0.31.3/ramda.min.js"></script>
+    <script>
+        const MayBe = (x)=>({
+            isEmpty:(x)=>x===null || x===undefined || x=== "",
+            map(fn){
+               
+               return this.isEmpty(x)? MayBe.of(null) : MayBe.of(fn(x))
+            },
+            valueOf:()=>x
+        })
+        MayBe.of = MayBe;
+        // console.log(MayBe.isEmpty());
+        
+        function toUpperCase(str){
+            return str.toUpperCase();
+        }
+
+        function appendHi(str){
+            return str+" Hi";
+        }   
+
+        let newFun = R.pipe(toUpperCase,appendHi);
+        let result = MayBe.of("hello").map(newFun);
+        console.log(result.valueOf());
+        
+        
+    </script>
+</html>

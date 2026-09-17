@@ -1,0 +1,35 @@
+<html>
+    <script>
+        class Human{
+            #age;
+
+            constructor(name, age){
+                this.name = name;
+                this.#age = age;
+                console.log(`Human constructor called for ${this.name}`);
+            }
+
+            get age() {
+                return this.#age;
+            }
+            set age(value){
+                if(value > 0 && value < 120){
+                    this.#age = value;
+                }
+            }
+        }
+        const h1 = new Human("Chan",20);
+        
+        h1.age = 23;
+        console.log(h1.age);
+        Human.prototype.display = function(){
+            console.log(`Name is ${this.name} and age is ${this.age}`)
+        }
+        h1.display();
+        String.prototype.isEmpty= function(){
+            return this.length == 0
+        } // normally shouldn't do , but you do
+        console.log(`""`,"".isEmpty())
+        console.log("hello", "hello".isEmpty(   ))
+    </script>
+</html>

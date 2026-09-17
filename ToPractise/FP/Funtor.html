@@ -1,0 +1,18 @@
+<html>
+    <script>
+        let Container = (x)=>({
+            map:(fn)=>Container(fn(x)),
+            valueOf:()=>x
+        })
+        Container.of = Container;
+        let counter = Container(5);
+        let inc = (x)=> x+1;
+        console.log(counter);
+        let counter1 = counter.map(inc);
+        console.log(counter1.valueOf());
+        
+        let multiply = (x)=> x*2;
+        let counter2 = Container(6).map(multiply).map(inc);
+        console.log(counter2.valueOf());
+    </script>
+</html>

@@ -1,0 +1,25 @@
+<html>
+    <script>
+        let MayBe = (x)=>({
+            isEmpty:(x)=> x=== null || x === undefined || x === "",
+             map(fn){
+              return this.isEmpty(x) ? MayBe.of(null) : MayBe.of(fn(x))
+             },
+             flatMap(fn){
+                return this.isEmpty(x) ? MayBe.of(null) : fn(x)
+             },
+             flat:()=>x,
+             valueOf:()=>x
+        })
+        MayBe.of = MayBe;
+        function toUpperCase(x){
+            return MayBe.of(x).map((x)=>x.toUpperCase());
+        }
+        
+        let result = MayBe.of("Javascript")
+                            .flatMap(toUpperCase)
+                            // .map(toUpperCase)
+                            //  .flat();
+        console.log(result.valueOf());
+    </script>
+</html>

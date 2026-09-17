@@ -1,0 +1,29 @@
+<html>
+    <script>
+        let first = function(x){
+            return x+1;
+        }
+
+        let second = function(x){
+            return x*2;
+        }
+
+        let third = function(x){
+            return x-3;
+        }
+        
+        let fourth = function(x){
+            return x/4;
+        }
+
+        function multiCompose(...fns){
+            return function(x){
+                return fns.reduceRight((x,fn)=>fn(x),x)
+            }
+        }
+
+        let composed = multiCompose(first,second,third,fourth);
+        console.log(composed(10))
+        console.log(composed(20))
+    </script>
+</html>

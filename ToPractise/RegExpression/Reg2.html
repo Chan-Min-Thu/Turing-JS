@@ -1,0 +1,29 @@
+<html>
+<script>
+    let pattern = /\w$/;// end with any charaters/([a-zA-z]|[0-9])/
+    console.log(`${pattern} end with asdf`, pattern.test("asdf"));
+    console.log(`${pattern} end with aeiou`, pattern.test("aeiou"));
+    console.log(`${pattern} end with 123asdf`, pattern.test("123asdf"));
+    console.log(`${pattern} end with #123asdf`, pattern.test("#123asdf"));
+    console.log("-------------------------------------");
+    pattern = /^[a-bA-Z](\w)*$/; //start with a-bA-Z and end with any charaters
+    console.log(`${pattern} with Aung123 `, pattern.test("Aung123"))
+    console.log(`${pattern} with Aung123#`, pattern.test("Aung123#"))
+    console.log("-------------------------------------");
+    pattern = /^A\sB$/; // \s white space , tab, new line
+    console.log(`${pattern} with A B `, pattern.test("A B"))
+    console.log(`${pattern} with A  B`, pattern.test("A  B"))
+    console.log(`${pattern} with A\tB`, pattern.test("A\tB"))
+    console.log(`${pattern} with A\nB`, pattern.test("A\nB"))
+    console.log(`${pattern} with AeB`, pattern.test("AeB"))
+    console.log("-------------------------------------");
+    pattern = /^A\SB$/; // \S none white space;
+    console.log(`${pattern} with A B `, pattern.test("A B"))
+    console.log(`${pattern} with A  B`, pattern.test("A  B"))
+    console.log(`${pattern} with A\tB`, pattern.test("A\tB"))
+    console.log(`${pattern} with A\nB`, pattern.test("A\nB"))
+    console.log(`${pattern} with AeB`, pattern.test("AeB"))
+    console.log("-------------------------------------");
+</script>
+
+</html>

@@ -25,7 +25,7 @@
       {
         name: "Aung Kyaw",
         gender: "Male",
-        age: 21,
+        age: 22,
       },
     ];
 
@@ -33,5 +33,15 @@
       .filter((stu) => stu.gender === "Female")
       .reduce((stuA, stuB) => (stuA.age < stuB.age ? stuA : stuB));
     console.log("youngest Female", youngestFemale);
+
+    let sortStudentsByAge = students.sort((stuA, stuB) => stuA.age - stuB.age);
+    console.log("sortStudents by Age", sortStudentsByAge);
+    let sortStudentsByName = students.sort((stuA, stuB) => {
+      if(stuA.age === stuB.age){
+        return stuA.name.localeCompare(stuB.name)
+      }else{
+        return stuA.age - stuB.age
+      }});
+    console.log("sortStudents by Name", sortStudentsByName);
   </script>
 </html>

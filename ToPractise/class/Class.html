@@ -1,0 +1,31 @@
+<html>
+    <script>
+        class Item{
+            constructor(name,price,qty){
+                this.name = name;
+                this.price = price;
+                this.qty = qty;
+            }
+        };
+
+        let item1 = new Item("Pen",10,2);
+        class ShoppingCart{
+            constructor(){
+                this.items =[];
+            }
+            addItem(item){
+                this.items.push(item);
+            }
+            displayItems(){
+                this.items.forEach(item=>{
+                    console.log(`Item Name: ${item.name.padEnd(10)}, Price: ${item.price.toString().padEnd(10)}, Quantity: ${item.qty.toString().padEnd(10)}`);
+                })
+            }
+        }
+        
+        let cart = new ShoppingCart();
+        cart.addItem(item1);
+        cart.addItem(new Item("Pencil",5,3));
+        cart.displayItems();
+    </script>
+</html>

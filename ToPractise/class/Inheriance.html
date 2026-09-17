@@ -1,0 +1,45 @@
+<html>
+    <script>
+        class Human{
+            #age;
+
+            constructor(name, age){
+                this.name = name;
+                this.#age = age;
+                console.log(`Human constructor called for ${this.name}`);
+            }
+
+            get age() {
+                return this.#age;
+            }
+            set age(value){
+                if(value > 0 && value < 120){
+                    this.#age = value;
+                }
+            }
+            eat(){
+                console.log(`${this.name} is foody person.`)
+            }
+            work(){
+                console.log(`${this.name} is working.`)
+            }
+        }
+        
+        class Teacher extends Human{
+            subject ="";
+            constructor(name,age,subject){
+                super(name,age)
+                this.subject = subject
+            }
+            teaching(){
+                super.work();
+                console.log("He is also teaching some subject.")
+            }
+        }
+        const t1  = new Teacher("Kiwi",29,"English")
+        t1.eat()
+        t1.work()
+        t1.teaching()
+        console.log(t1)
+    </script>
+</html>

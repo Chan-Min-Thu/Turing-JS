@@ -1,0 +1,23 @@
+<html>
+    <script>
+        let pattern = /^(a|b|c)+$/i; // i means case-sensitive.
+        console.log(`${pattern} aaa`, pattern.test("aaa"));
+        console.log(`${pattern} abc`, pattern.test("abc"));
+        console.log(`${pattern} Ad`, pattern.test("Ad")); 
+
+        console.log("Search ," ,"Javascript".search(/script/ui));
+        console.log("Search ," ,"Python".search(/script/ui));
+
+        let email = "chan@domain.com";
+        console.log("email", email.substring(email.search(/@/ui) +1 ))
+
+        let str = "Java and javascript are programming language."
+        str = str.replace(/javascript/gi,"Javascript");
+        
+        console.log("str",str)
+
+        let str2 = "7 plus 8 equals 15."
+        console.log(str2.match(/\d+/g));
+        
+    </script>
+</html>

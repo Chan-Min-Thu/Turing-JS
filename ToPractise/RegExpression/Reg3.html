@@ -1,0 +1,38 @@
+<html>
+<script>
+    let pattern = /^\d+$/;// \d means numbers and + do more nums;
+    console.log(`${pattern} 123`, pattern.test("123"));
+    console.log(`${pattern} 1`, pattern.test("1"));
+    console.log(`${pattern} 12102313`, pattern.test("12102313"));
+    console.log(`${pattern} #123`, pattern.test("#123"));
+    console.log("-------------------------------------");
+    pattern = /^\D+$/; // \D not numbers
+    console.log(`${pattern} 123`, pattern.test("123"));
+    console.log(`${pattern} 1`, pattern.test("1"));
+    console.log(`${pattern} #Hello`, pattern.test("#Hello"));
+    console.log(`${pattern} Hello`, pattern.test("Hello"));
+    console.log("-------------------------------------");
+    pattern = /^\d{3}/; // exactly 3 nums;
+    console.log(`${pattern} 123`, pattern.test("123"));
+    console.log(`${pattern} 1`, pattern.test("1"));
+    console.log(`${pattern} 123123`, pattern.test("123123"));
+    console.log("-------------------------------------");
+    pattern = /^\d{3,5}$/; // start with 3 or 5 nums;
+    console.log(`${pattern} 123`, pattern.test("123"));
+    console.log(`${pattern} 1`, pattern.test("1"));
+    console.log(`${pattern} hello23123`, pattern.test("hello23123"));
+    console.log("-------------------------------------");
+    pattern = /^\d?$/; // start with num and ? is optional 
+    console.log(`${pattern} 123`, pattern.test("123"));
+    console.log(`${pattern} 1`, pattern.test("1"));
+    console.log(`${pattern} 23123`, pattern.test("23123"));
+    console.log(`${pattern} `, pattern.test(""));
+    console.log("-------------------------------------");
+    pattern = /^(a|b|c)+$/;
+    console.log(`${pattern} aaa`, pattern.test("aaa"));
+    console.log(`${pattern} abc`, pattern.test("abc"));
+    console.log(`${pattern} ad`, pattern.test("ad"));
+  
+</script>
+
+</html>

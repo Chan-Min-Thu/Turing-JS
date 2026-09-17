@@ -1,0 +1,20 @@
+<html>
+    <script>
+        let min = Math.min(1,2,3,4,5);
+        console.log(min);
+        class MyMath{
+            static min(...args){
+               let min = args[0];
+               for(const arg of args){
+                   if(arg<min){
+                       min = arg;
+                   }
+               }
+               return min;
+            }
+        }
+
+        let min1 =MyMath.min(1,-2,3,4,5);
+        console.log(min1);
+    </script>
+</html>

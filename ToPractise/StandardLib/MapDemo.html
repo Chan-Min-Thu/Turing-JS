@@ -1,0 +1,25 @@
+<html>
+    <script>
+        let map = new Map([
+            ["id-1","Henry"],
+            ["id-2","David"]
+        ])
+
+        console.log(map.size)
+        map.set("id-1","Jhon Henry")
+        console.log(map.get("id-1"))
+        console.log(map.has("id-2"))
+
+        console.log(map.keys())
+        console.log(map.values())
+        console.log(map.entries())
+        /*
+        map.delete("id-1")
+        map.clear()
+        console.log(map)
+        */
+        map.forEach((key,value)=>{
+            console.log("key",key,"value",value)
+        })
+    </script>
+</html>

@@ -1,0 +1,32 @@
+<html>
+<script>
+    let pattern = /^A/;
+    console.log(`${pattern} Abc`, pattern.test("Abc"))
+    console.log(`${pattern} abc`, pattern.test('abc'));
+    console.log('-----------------------------');
+    pattern = /^Java/;
+    console.log(`${pattern} Java`, pattern.test("Javascript"))
+    console.log('-----------------------------');
+    pattern = /Script$/
+    console.log(`${pattern} Script`, pattern.test("javaScript"))
+    console.log(`${pattern} Script`, pattern.test("LiveScript"))
+    console.log('-----------------------------');
+    pattern = /[abc]$/
+    console.log(`${pattern} end with javaScript`, pattern.test("javaScript"))
+    console.log(`${pattern} end with java`, pattern.test("java"));
+    console.log(`${pattern} end with catd`, pattern.test("catd"));
+    console.log('-----------------------------');
+    pattern = /^[abc]/
+    console.log(`${pattern} start with apple`, pattern.test("apple"))
+    console.log(`${pattern} start with java`, pattern.test("java"));
+    console.log(`${pattern} start with cat`, pattern.test("cat"));
+    console.log('-----------------------------');
+    pattern = /.$/; //any charater but not new line
+    console.log(`${pattern} end with javaScript`, pattern.test("javaScript"))
+    console.log(`${pattern} end with java`, pattern.test("java"));
+    console.log(`${pattern} end with \n`, pattern.test("\n"));
+    console.log('-----------------------------');
+    
+</script>
+
+</html>
