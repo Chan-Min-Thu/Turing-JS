@@ -1,0 +1,33 @@
+<html>
+    <script>
+        console.log("hello");
+        console.table([{name:"chan",age:27},{name:"zin",age:26}]);
+        console.error("Error");
+        console.warn("Warning");
+        console.info("Info");
+        console.debug("debug")
+        function divide(a,b){
+            console.assert(a!==undefined, "a is empty");
+            console.assert(b!==undefined, "b is empty.")
+            return a/b;
+        }
+       console.log(divide(10));
+       console.log(divide(10,2))
+    //    console.clear()
+       console.count("label");
+       console.count("label")
+
+       console.group();
+       console.log("level1");
+       console.group();
+       console.log("level2");
+       console.groupEnd();
+       console.groupEnd();
+       console.log("back to normal")
+
+       console.time("step1");
+       console.timeLog("step1");
+       console.timeLog("step1");
+       console.timeEnd("step1")
+    </script>
+</html>

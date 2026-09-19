@@ -1,0 +1,18 @@
+<html>
+    <script>
+        function div(a,b){
+            if(b==0 || isNaN(a) || isNaN(b)){
+               throw new Error("a or b is not a number or b is something worng.")
+            }
+            return a/b;
+            
+        }
+
+        try{
+            let result = div(10,NaN);
+            console.log("result",result)
+        }catch(e){
+            console.error("error",e)
+        }
+    </script>
+</html>
