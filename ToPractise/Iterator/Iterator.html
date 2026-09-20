@@ -1,0 +1,18 @@
+<html>
+    <script>
+        let array =[1,2,3,4,5]
+        for(let el of array){
+            console.log("element",el)
+        }
+        let m = new Map([["one",1],["two",2]]);
+        for(const [key,value] of m){
+            console.log("key",key,"value",value)
+        }
+
+      
+        let iterator = array[Symbol.iterator]();
+        for(let result=iterator.next(); !result.done;result=iterator.next()){
+            console.log("value",result.value)
+        }
+    </script>
+</html>
