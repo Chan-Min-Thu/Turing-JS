@@ -1,0 +1,24 @@
+<html>
+    <body>
+        <button type="button" id="btnClick">Click me</button>
+    </body>
+<script>
+    function asyncDiv(a, b, callback) {
+        setTimeout(() => {
+            console.log("Process is running...");
+            callback(a / b);
+        }, 1000)
+    }
+    asyncDiv(9, 3, process)
+    console.log("end...")
+    function process(fun) {
+        console.log("result :", fun)
+    };
+
+    document.getElementById("btnClick")
+    .addEventListener("click",function(){
+        console.log("hello clicked...")
+    })
+</script>
+
+</html>

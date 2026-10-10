@@ -5,7 +5,7 @@
     <script>
 
     let url1="https://jsonplaceholder.typicode.com/users/1";
-    let url2="https://jsonplaceholder.typicode.com/users/2";
+    let url2="https://jsonplaceholder.typicode.com/users2/2";
 
       /*
         fetch(url1)
@@ -41,9 +41,18 @@
     let urls = [url1, url2];
     let promises = urls.map(url => fetch(url).then(response => response.json()));
     console.log("step1")
+    /*
     Promise.all(promises)
         .then(users => console.log('Users:', users))
         .catch(error => console.error('Error:', error));
-
+    Promise.allSettled(promises)
+        .then(results => {
+           console.log('Results:', results);
+            });
+            */
+    Promise.race(promises)
+        .then(firstUser => console.log('First User:', firstUser))
+        .then(() => console.log("step2"))  
+        .catch(error => console.error('Error:', error));
     </script>
 </html>

@@ -1,0 +1,30 @@
+<html>
+
+<body></body>
+<script>
+    let url1 = 'https://jsonplaceholder.typicode.com/todos/1'
+    let url2 = 'https://jsonplaceholder.typicode.com/todos/2'
+    /*
+    fetch(url)
+        .then(response => response.json())
+        .then(json => console.log(json))
+        .catch(err => console.error('Error in fetching todo:', err))
+    */
+    async function fetchTodo(url) {
+        
+        try {
+            let response = await fetch(url);
+            let json = await response.json();
+            console.log(json);
+        } catch (err) {
+            console.error('Error in fetching todo:', err);
+        }
+
+    }
+
+    fetchTodo(url1);
+    fetchTodo(url2);
+    console.log("fetch ended....")
+</script>
+
+</html>

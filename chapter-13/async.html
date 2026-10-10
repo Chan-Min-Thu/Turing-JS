@@ -1,0 +1,21 @@
+<html>
+    <body>
+
+    </body>
+    <script>
+        async function getData(){
+            return 10;
+        }
+        getData().then((data)=> console.log(data));
+
+        async function anonther(){
+            return Promise.resolve(20);
+        }
+        async function haveFun(){
+            // let data = await getData();
+            let data = await anonther();
+            console.log(data);
+        }
+        haveFun();
+    </script>
+</html>

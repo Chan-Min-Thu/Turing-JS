@@ -1,0 +1,19 @@
+<html>
+
+<body></body>
+<script>
+    let url1 = 'https://jsonplaceholder.typicode.com/todos/1'
+    let url2 = 'https://jsonplaceholder.typicode.com/todos/2'
+    let url3 = 'https://jsonplaceholder.typicode.com/todos/3'
+    async function getUsers() {
+        let urls = [url1, url2, url3];
+        let promises = urls.map((url) => fetch(url).then((resp) => resp.json()));
+
+        for await (const p of promises) {
+            console.log(p);
+        }
+    }
+    getUsers();
+</script>
+
+</html>

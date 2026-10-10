@@ -1,0 +1,61 @@
+<html>
+<script>
+    class CustomPromise {
+        handler = [];
+        constructor(executorFun) {
+            setTimeout(() => {
+                executorFun((data) => {
+                    this.handleChain(data, true);
+                }, (error) => {
+                    this.handleChain(error, false);
+                });
+            }, 0);
+        }
+
+        handleChain(data, success) {
+            for (let i = 0; i < this.handler.length; i++) {
+                try {
+                    if (success) {
+                        data = this.handler[i].success(data);
+                    } else {
+                        data = this.handler[i].error(data);
+                    }
+                } catch (err) {
+                    data = err;
+                    success = false;
+                }
+            }
+        }
+
+        then(successHandler, errorHandler) {
+            this.handler.push({ success: successHandler, error: errorHandler });
+            console.log("success", successHandler, "error", errorHandler);
+            return this;
+        }
+    }
+
+    function asyncDiv(a, b) {
+        return new CustomPromise((resolve, reject) => {
+            setTimeout(() => {
+                if (isNaN(a) || isNaN(b)) {
+                    reject("A or b is not a number.")
+                }
+                else {
+                    resolve(a / b);
+                };
+            }, 1000)
+        })
+    }
+
+    asyncDiv(15, 3).then((data) => {
+        return data + 1
+    }, (error) => console.log("error", error))
+        .then((data) => console.log("data2", data), (error) => console.log("error", error))
+
+    let promise = new CustomPromise((resolve, reject) => { reject(100) })
+        .then((data) => data + 1, (error) => error + 2)
+        .then((data) => data * 2, (error) => error * 3)
+        .then((data) => console.log("data", data), (error) => console.log("error", error))
+</script>
+
+</html>
